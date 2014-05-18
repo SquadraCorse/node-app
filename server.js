@@ -1,11 +1,11 @@
 var express = require('express');
-var http = require('http');
-var app = express();
-
+var request = require('request');
 var apphbs = require('express3-handlebars');
 // var helpers = require('./lib/helpers');
-var hbs;
 
+var app = express();
+
+var hbs;
 
 hbs = apphbs.create({
     extname: '.hbs',
@@ -48,20 +48,25 @@ app.get('/loop', function(req, res){
 app.get('/google', function(req, res) {
 
   var options = {
-    host: 'www.google.com',
-    port: 80,
-    path: '/index.html'
+    url: 'https://www.googleapis.com/urlshortener/v1/url',
+    qs: {
+      longUrl: 'http://travel-node.herokuapp.com',
+      key: process.env.KEY
+    },
+    method: 'POST',
+    json: true,
+    headers: {
+      'accept': 'application/json',
+      'Content-Type': 'application/json'
+    }
   };
 
-  http.get(options, function(data) {
-    console.log('STATUS: ' + data.statusCode);
-    console.log(data)
-    res.render('google', data);
-  }).on('error', function(e) {
-    res.render('google', e);
+  request(options, function (error, response, body) {
+    res.render('google', body);
   });
 
 });
+
 
 // SEARCH APP
 app.get('/destinations/:country/:language/search', function(req, res) {
