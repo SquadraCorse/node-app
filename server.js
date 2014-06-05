@@ -4,8 +4,10 @@ var apphbs = require('express3-handlebars');
 // TODO: rewrite JAVA helpers into JAVASCRIPT ONES
 var helpers = require('./lib/helpers');
 
+
 // OWN FUNCTIONS
 require('./lib/xhr');
+
 
 // USE EXPRESS HANDLEBARS
 var app = express();
@@ -23,6 +25,7 @@ hbs = apphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+
 // DYNAMIC HELPERS
 // HELPER: lazy load template
 app.locals.dynamic = function (file, context, opts) {
@@ -38,6 +41,9 @@ app.locals.dynamic = function (file, context, opts) {
     return new hbs.handlebars.SafeString(template(context));
 
 };
+// HELPER: i18n
+
+
 
 
 // HOME
