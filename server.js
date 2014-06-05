@@ -29,7 +29,11 @@ app.locals.dynamic = function (file, context, opts) {
 
     file = file.replace(/\//g, '_') + hbs.extname;
 
-    var template = hbs.handlebars.compile(fs.readFileSync(__dirname + '/views/partials/' + file, 'utf8'));
+    var myPartial = __dirname + '/views/partials/' + file;
+
+    // var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
+    // Compiled template is already available...
+    var template = hbs.compiled[myPartial];
 
     return new hbs.handlebars.SafeString(template(context));
 
