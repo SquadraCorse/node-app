@@ -1,3 +1,4 @@
+var fs = require('fs');
 var express = require('express');
 var apphbs = require('express3-handlebars');
 // TODO: rewrite JAVA helpers into JAVASCRIPT ONES
@@ -22,10 +23,26 @@ hbs = apphbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+// DYNAMIC HELPERS
+// HELPER: lazy load template
+app.locals.dynamic = function (file, context, opts) {
+
+    file = file.replace(/\//g, '_') + hbs.extname;
+
+    var template = hbs.handlebars.compile(fs.readFileSync(__dirname + '/views/partials/' + file, 'utf8'));
+
+    return new hbs.handlebars.SafeString(template(context));
+
+};
+
 
 // HOME
 app.get('/', function(req, res){
-    res.render('index');
+    var model = {
+        copyright: 'aap',
+        writer: 'oudenniel'
+    }
+    res.render('index', model);
 });
 
 // SAMPLE
