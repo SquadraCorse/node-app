@@ -34,9 +34,10 @@ app.locals.dynamic = function (file, context, opts) {
 
     var myPartial = __dirname + '/views/partials/' + file;
 
-    // var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
+    // Can't use compiled one on windows because of path / and \\ blah
+    var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
     // Compiled template is already available...
-    var template = hbs.compiled[myPartial];
+    // var template = hbs.compiled[myPartial];
 
     return new hbs.handlebars.SafeString(template(context));
 
@@ -73,6 +74,18 @@ app.get('/sample', function(req, res) {
     xhr(res, url, query, tmpl);
 
 });
+
+app.get('/search', function(req, res) {
+
+    var url = 'http://www.ute1.klm.com/destinations/nl/nl/search';
+    var tmpl = 'search';
+    var query = {};
+
+    xhr(res, url, query, tmpl);
+
+});
+
+
 
 // SEARCH APP
 app.get('/destinations/:country/:language/search', function(req, res) {
