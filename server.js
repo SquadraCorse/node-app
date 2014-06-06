@@ -41,6 +41,14 @@ app.locals.dynamic = function (file, context, opts) {
     return new hbs.handlebars.SafeString(template(context));
 
 };
+
+app.locals.foo = function (context) {
+
+
+
+    return '123';
+
+};
 // HELPER: i18n
 
 
