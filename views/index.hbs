@@ -5,21 +5,35 @@
 	<li><a href='/destinations/nl/nl/search'>Search app</a></li>
 </ul>
 
-{{! HELPER: COMPARE}}
-{{#compare copyright 'foo' operator='!='}}
-	HELPER: COMPARE
-{{/compare}}
-
-{{! EXAMPLE FOR CITY DYNAMIC TABS}}
+<p><strong>helper i18n (using i18n-node module):</strong></p>
 <p>
-	{{copyright}}
-	HELPER: DYNAMIC: {{dynamic 'footer' this}}
+	{{{i18n "Hello"}}}<br />
+	{{{i18n label "KL" 123}}}<br />
+	{{{__ "Welcome %s at this demo" "KL"}}}<br />
+	{{{__n "%s cat" "%s cats" 1}}}, {{{__n "%s cat" "%s cats" 2}}}
 </p>
 
 
+<p><strong>helper compare:</strong><br /></p>
+
+{{#compare copyright 'foo' operator='!='}}
+	key 'copyright' value '{{copyright}}' != 'foo'
+{{/compare}}
+
+
+<p><strong>helper dynamic templates:</strong></p>
+
+{{#each content}}
+
+	{{dynamic template ../this}}
+
+{{/each}}
+
+
+
+{{writer}}
 
 <p>
 TODO:<br />
-java i18n > js helper<br />
 java find > js helper
 </p>

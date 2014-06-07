@@ -1,6 +1,6 @@
 {
-	"Hello": "Hello",
-	"Welcome %s at this demo": "Welcome %s at this demo",
+	"Hello": "Guttentag",
+	"Welcome %s at this demo": "Welkom %s",
 	"foo.bar": "foo %s bar %s",
 	"%s cat": {
 		"one": "%s cat",
