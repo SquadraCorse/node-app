@@ -428,3 +428,11 @@ div.tif-inspired-font {
 div.tif-practical-info-multicolumn {
 	border-color: #ddd;
 }
+
+@media (max-width: 700px) {
+	div.tif-tabs .tif-tabs-nav.tif-tabs-nav-mobile-toggle-open .tif-tabs-nav-list li,
+	div.tif-search-filters-mobile li {
+		border-top-color: #efefef;
+		border-bottom-color: #fff;
+	}
+}
