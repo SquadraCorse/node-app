@@ -439,11 +439,14 @@ div.tif-practical-info-multicolumn {
 }
 
 /* FILTERING */
-li.tif-search-filters-themes-disabled {
-	color: #ccc;
-}
 li.tif-search-filters-themes {
 	color: #595959;
+}
+li.tif-search-filters-themes-selected {
+	color: #c40000;
+}
+li.tif-search-filters-themes-disabled {
+	color: #ccc;
 }
 li.tif-search-filters-themes:hover {
 	background-color: #efefef;
