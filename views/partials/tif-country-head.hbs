@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9" > <![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{model.language}}-{{model.country}}" class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>KLM {{i18n 'tif.search.travelguide'}} - China</title>
+    <meta name="description" content="{{model.destination.tabsInfo.overview}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta property="og:site_name" content="KLM.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="{{model.language}}" />
+    <meta property="og:title" content="{{model.destination.overview.title}}" />
+    <meta property="og:description" content="{{model.destination.tabsInfo.overview}}" />
+    <meta property="og:image" content="http://www.klm.com{{model.destination.ogImage}}" />
+
+    <link rel="stylesheet" href="/ams/frontend/css/core-{{model.language}}.css"/>
+    <link rel="stylesheet" href="/destinations/static/{{model.appVersion}}/css/tif-page-country.css"/>
+
+    <link rel="canonical" href="http://www.klm.com{{find model.articleLinks 'article' operator="==" key="rel" value="href"}}" />
+
+    <script src="/ams/frontend/js/g-core-bundle.js"></script>
+    <script src="/travel/{{model.country}}_{{model.language}}/static/js/local.js"></script>
+
+    <!-- tif.cms.tcm: {{model.metadata.compId}}|{{model.metadata.lastPublished}}|{{model.metadata.lastChanged}} -->
+
+</head>
+
+<body data-srcset="{{find model.destination.visual.hrefs "small" operator="==" key="type" value="url"}} 680w, {{find model.destination.visual.hrefs "medium" operator="==" key="type" value="url"}} 984w, {{find model.destination.visual.hrefs "large" operator="==" key="type" value="url"}} 1x" class="js-g-img g-img-replace-me" data-img-type="background">
+
+<span class="js-g-mi" data-g-mi="tif.page.country"></span>

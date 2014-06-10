@@ -1,0 +1,46 @@
+<div class="tif-footer">
+
+	{{> tif-partial-filters-mobile }}
+
+    <div class="g-grid--row">
+        <div class="g-grid--span12">
+
+            {{> footer}}
+
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    require.config({
+        paths : {
+            "tif" : "/destinations/static/{{model.appVersion}}",
+            "nls" : '//www.ute1.klm.com/travel/{{model.country}}_{{model.language}}/static/nls'
+        }
+    });
+
+
+    {{> tif-i18n }}
+
+    {{> tif-constants }}
+
+    {{> tif-regions }}
+
+
+    require(["tif/js/tif-img-responsive"], function (Responsive) {
+        Responsive.crawl();
+    });
+
+    require(["tif/js/tif"], function (tifApp) {
+        tifApp.init();
+    });
+
+</script>
+
+
+
+
+</body>
+</html>

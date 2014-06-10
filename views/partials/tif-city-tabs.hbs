@@ -1,0 +1,17 @@
+<div class="tif-tabs-nav tif-tabs-nav-transparency">
+    <div class="g-grid--row">
+        <div class="g-grid--span12">
+            <a href="#" class="tif-tabs-nav-mobile-toggle g-btn g-btn-small g-btn-toneddown"><span>Menu</span></a>
+            <ul class="tif-tabs-nav-list g-clear">            
+
+            {{#each model.contentConfiguration.tabs}}
+
+                <li class="{{#if active}}tif-activetab{{/if}} {{#compare @index 0 operator='=='}}tif-tabs-nav-no-delimiter{{/compare}}"><a href="{{url}}" data-g-mi="tif.page.destination.tabs" data-event-value="{{id}}" data-tab-id="{{id}}" data-xhr-url="{{templateUrl}}" class="js-g-mi tif-tab-text">{{title}}</a></li>
+
+            {{/each}}
+
+            </ul>
+
+        </div>
+    </div>
+</div>

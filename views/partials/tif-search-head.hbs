@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9" > <![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{model.language}}-{{model.country}}" class="no-js"> <!--<![endif]-->
+
+<head>
+
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>{{model.header.title}} - KLM.com</title>
+    <meta name="description" content="{{i18n 'tif.search.metadescription.default'}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta property="og:site_name" content="KLM.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="{{model.language}}" />
+    <meta property="og:title" content="{{model.header.title}}" />
+    <meta property="og:description" content="{{i18n 'tif.search.metadescription.default'}}" />
+    <meta property="og:image" content="http://www.klm.com/destinations/static/{{model.appVersion}}/img/og-visual.png" />
+
+    <link rel="stylesheet" href="/destinations/static/core-AF.css"/>
+    <link rel="stylesheet" href="/destinations/static/{{model.appVersion}}/css/tif-AF.css"/>
+
+    <link rel="canonical" href="//www.klm.com/destinations/{{model.country}}/{{model.language}}/search" />
+
+    <script src="//www.klm.com/ams/frontend/js/g-core-bundle.js"></script>
+    <script src="//www.klm.com/travel/{{model.country}}_{{model.language}}/static/js/local.js"></script>
+
+    <!-- tif.cms.tcm: {{model.header.metadata.compId}}|{{model.header.metadata.lastPublished}}|{{model.header.metadata.lastChanged}} -->
+
+</head>
+
+<body data-srcset="{{find model.header.inspirationalVisual.hrefs "small" operator="==" key="type" value="url"}} 680w, {{find model.header.inspirationalVisual.hrefs "medium" operator="==" key="type" value="url"}} 984w, {{find model.header.inspirationalVisual.hrefs "large" operator="==" key="type" value="url"}} 1x" class="js-g-img g-img-replace-me" data-img-type="background">
+
+<span class="js-g-mi" data-g-mi="tif.page.destination"></span>

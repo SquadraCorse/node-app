@@ -1,0 +1,39 @@
+
+{{#if model.roundedPrice}}
+
+<div class="tif-pricebox">
+    <div class="tif-pricebox-heading">
+        <div class="tif-pricebox-heading-destination g-font-klm">{{model.destinationName}}</div>
+    </div>
+
+    <p>
+        <span class="tif-pricebox-fare-label">{{i18n 'tif.destination.pricebox.farelabel'}}</span>
+        <span class="tif-pricebox-fare tif-pricebox-fare-line">
+            <span class="tif-pricebox-fare-currency {{#if model.promotion}}tif-pricebox-specialprice{{/if}} g-font-klm">{{model.price.currency}}</span> <span class="tif-pricebox-fare-value {{#if model.promotion}}tif-pricebox-specialprice{{/if}} g-font-klm">{{model.roundedPrice.displayPrice}}</span>
+        </span>
+    </p>
+
+    <ul class="tif-pricebox-fare-conditions">
+
+    {{#if model.taxBookingPriceDescription}}
+        <li class="tif-pricebox-fare-condition">{{model.taxBookingPriceDescription}}</li>
+    {{/if}}
+
+        <li class="tif-pricebox-fare-condition">{{i18n 'tif.destination.pricebox.departingfromlabel'}} {{model.originName}}</li>
+    </ul>
+
+    <a class="g-btn g-btn-primary g-btn-large g-btn-forward tif-pricebox-btn js-g-mi" href="#" data-g-mi="tif.page.destination.pricebox">
+        <span>{{i18n 'tif.destination.pricebox.viewofferbuttontext'}}<b aria-hidden="true" class="g-klmicon">&gt;</b></span>
+    </a>
+</div>
+
+<div class="tif-pricebox-mobile">
+    <a href="#">
+        <span>{{i18n 'tif.destination.pricebox.farelabel'}}</span>
+        <b>
+            <span class="tif-pricebox-fare-currency g-font-klm">{{model.fare.price.currency}}</span> <span class="tif-pricebox-fare-value g-font-klm">{{model.roundedPrice.displayPrice}}</span> <b aria-hidden="true" class="g-klmicon tif-pricebox-arrow">&gt;</b>
+        </b>
+    </a>
+</div>
+
+{{/if}}

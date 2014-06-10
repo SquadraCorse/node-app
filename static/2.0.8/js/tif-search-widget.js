@@ -1,0 +1,1 @@
+define(["v2/lib/jquery"],function(e){var t=function(t){function i(){try{var e=r.contents().find("body").height()+40;e!==n&&e!==40&&r.height(e),n=e}catch(t){}}function s(){i(),setTimeout(function(){s()},400)}var n=0,r=e(t);s()};return t});

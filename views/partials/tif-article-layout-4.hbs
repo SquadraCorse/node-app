@@ -1,0 +1,39 @@
+{{#compare layout '4' operator='=='}}
+
+	{{#compare numberOfItems 1 operator='=='}}
+
+			{{#each contentItems}}
+				<div class="g-grid--span12">
+					{{> tif-article-section-paragraph-3}}
+				</div>
+			{{/each}}
+
+		{{else}}
+
+
+			{{#each contentItems}}
+
+				{{#compare type 'quote' operator='=='}}
+					<div class="g-grid--span4">
+					{{> tif-article-section-quote}}
+					</div>
+				{{/compare}}
+
+				{{#compare type 'image' operator='=='}}
+					<div class="g-grid--span4">
+					{{> tif-article-section-image}}
+					</div>
+				{{/compare}}
+
+				{{#compare type 'paragraph' operator='=='}}
+					<div class="g-grid--span8">
+					{{> tif-article-section-paragraph-2}}
+					</div>
+				{{/compare}}
+
+
+			{{/each}}
+
+	{{/compare}}
+
+{{/compare}}

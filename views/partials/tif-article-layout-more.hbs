@@ -1,0 +1,27 @@
+{{#if sight}}
+
+<div class="g-grid--row tif-article-layout tif-article-layout-more tif-inspired-font g-hidden">
+	<div class="g-grid--indent">
+		<div class="tif-article-more-layout g-clear">
+
+			<div class="g-grid--span3">
+				{{> tif-article-section-image sight}}
+			</div>
+
+			<div class="g-grid--span9">
+
+				<h3 class="g-h2">{{sight.title}}</h3>
+
+				{{{sight.body}}}
+
+				{{#if sight.address}}
+					<p class="tif-article-address">{{sight.address}} <a href="http://maps.google.com/?q={{sight.address}}" class="tif-external">Google maps</a>
+					</p>
+				{{/if}}
+			</div>
+
+		</div>
+	</div>
+</div>
+
+{{/if}}

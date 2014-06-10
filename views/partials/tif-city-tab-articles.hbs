@@ -1,0 +1,58 @@
+<div class="tif-destination-articles-container">
+    <div class="g-grid--row">
+        <div class="g-grid--indent">
+            <div class="g-grid--span8">
+                <p class="tif-destination-backlink"></p>
+                <h2 class="g-font-klm tif-h1">{{model.articles.intro-title}}</h2>
+                <p>
+                    {{model.articles.intro}}
+                </p>
+            </div>
+            <div class="g-grid--span4">
+                <div data-themes="{{#each model.themes}}{{themeCode}},{{/each}}" class="tif-destination-articles-themes">
+                    <h2 class="g-h2">{{i18n "tif.destination.tab.articles.popular-in" model.cityDetails.name}}</h2>
+                    <ul></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="g-grid--row tif-hide-on-mobile">
+        <div class="g-grid--indent">
+            <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+        </div>
+    </div>
+
+
+    <div class="g-grid--row">
+        <div class="g-grid--indent tif-grid--indent">
+            {{#each model.articles}}
+                <div class="tif-span--variable tif-destination-articles-article" data-themes="{{metadata.themes}}">
+                    <div class="tif-figure tif-image-default">
+                        <a href="{{link}}">
+                            <span data-srcset="{{find visual.hrefs 'small' operator="==" key="type" value="url"}} 480w, {{find visual.hrefs 'medium' operator="==" key="type" value="url"}} 700w" class="js-g-img g-img-lazy g-img-ratio-1-1" data-img-type="lazy" title="{{visual.alt}}"></span>
+                            <!--<span data-srcset="{{find visual.hrefs "medium" operator="==" key="type" value="url"}} 300w, {{find visual.hrefs "focusCroppedMedium" operator="==" key="type" value="url"}} 480w, {{find visual.hrefs "focusCroppedLarge" operator="==" key="type" value="url"}} 700w, {{find visual.hrefs "large" operator="==" key="type" value="url"}} 768w, {{find visual.hrefs "medium" operator="==" key="type" value="url"}} 300w 2x, {{find visual.hrefs "focusCroppedMedium" operator="==" key="type" value="url"}} 480w 2x, {{find visual.hrefs "focusCroppedLarge" operator="==" key="type" value="url"}} 700w 2x, {{find visual.hrefs "large" operator="==" key="type" value="url"}} 768w 2x" class="js-g-img g-img-lazy tif-img-cropped g-img-ratio-1-1" data-img-type="lazy" title="{{visual.alt}}"></span>-->
+                        </a>
+                    </div>
+
+                    <div class="tif-destination-articles-article-content">
+                        <h3 class="g-h3">{{title}}</h3>
+                        <span>{{intro}}</span>
+                        <a href="{{link}}">{{i18n "tif.destination.readmore.expand" model.cityDetails.name}}</a>
+                        <span aria-hidden="true" class="g-klmicon tif-icon-gt-small tif-color-blue-1">&gt;</span>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <div class="g-grid--row tif-hide-on-mobile">
+        <div class="g-grid--indent">
+            <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+        </div>
+    </div>
+</div>
+
+
+

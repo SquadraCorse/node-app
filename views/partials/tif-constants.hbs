@@ -1,0 +1,93 @@
+define("tif/constants", ["tif/i18n"], function (I18n) {
+    "use strict";
+
+    return {
+
+        "page": "{{model.page}}",
+        "version": "{{model.appVersion}}",
+        "activeTab": "{{model.activeTab}}",
+
+        "destName": "{{model.cityName}}",
+
+        "desktopBreakpoint": 1004,
+        "tabletBreakpoint": 700,
+        "mobileBreakpoint": 480,
+
+        "staticPath": "/destinations/static/{{model.appVersion}}",
+
+        "language": "{{model.language}}",
+        "country": "{{model.country}}",
+
+        "defaultOrigin": "{{model.origin}}",
+        "defaultPos": "{{model.country}}".toUpperCase(),
+
+        "destCode": "{{model.cityDetails.code}}",
+        "destinationUrl": "{{model.mainUrl}}",
+
+        "googleKey": "AIzaSyC5pZMY6YuTJ9Sqy4kDBZuxOb28R5VS_FE",
+
+        "allDestinationsUrl": "/destinations/",
+        "contentEnrichmentUrl": "/destinations/content/?country={{model.country}}&language={{model.language}}&destinations=",
+        "searchUrl": "/destinations/{{model.country}}/{{model.language}}/search",
+
+        "isMobile": navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|mobile/i),
+        "storageSupport": (window.Modernizr && window.Modernizr.localstorage && window.JSON) ? window.Modernizr.localstorage : false,
+
+        "themeIconMap": {
+            "ARC": "&#xe60f;",
+            "ROM": "&#xe619;",
+            "ACT": "&#xe616;",
+            "WEL": "&#xe603;",
+            "CUL": "&#xe613;",
+            "SHO": "&#xe602;",
+            "SKI": "&#xe606;",
+            "BEA": "&#xe600;",
+            "LUX": "&#xe60a;",
+            "FAM": "&#xe615;",
+            "ART": "&#xe60b;",
+            "MUS": "&#xe604;",
+            "DIV": "&#xe614;",
+            "NAT": "&#xe607;",
+            "GOL": "&#xe60c;",
+            "HIS": "&#xe617;"
+        },
+
+        "viewModes": {
+            "block": { pageLimit: 10, icon: "&#xe612;" },
+            "list":  { pageLimit: 20, icon: "&#xe610;" },
+            "map": { pageLimit: 1, icon: "&#xe61d;" }
+        },
+
+        "sortModes": [
+            {
+                "mode": "popularity",
+                "label": I18n.labels["tif_search_sort_popularity"]
+            },
+            {
+                "mode": "priceLowestFirst",
+                "label": I18n.labels["tif_search_sort_pricelowestfirst"]
+            },
+            {
+                "mode": "priceHighestFirst",
+                "label": I18n.labels["tif_search_sort_pricehighestfirst"]
+            },
+            {
+                "mode": "destinationNameAZ",
+                "label": I18n.labels["tif_search_sort_alphabeticaz"]
+            },
+            {
+                "mode": "destinationNameZA",
+                "label": I18n.labels["tif_search_sort_alphabeticza"]
+            },
+            {
+                "mode": "flightDurationLowestFirst",
+                "label": I18n.labels["tif_search_sort_flightdurationlowestfirst"]
+            },
+            {
+                "mode": "flightDurationHighestFirst",
+                "label": I18n.labels["tif_search_sort_flightdurationhighestfirst"]
+            }
+        ]
+    };
+
+});

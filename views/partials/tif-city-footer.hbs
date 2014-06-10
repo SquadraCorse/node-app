@@ -1,0 +1,59 @@
+<div class="tif-footer">
+
+    <div class="g-grid--row tif-hide-on-mobile">
+        <div class="g-grid--indent">
+            <div class="g-grid--span12">
+                <h3 class="g-font-klm tif-h2 heading-dark">{{i18n "tif.search.filters.title"}}</h3>
+            </div>
+        </div>
+    </div>
+
+    {{> tif-partial-filters }}
+
+    {{> tif-partial-filters-mobile }}
+
+    <div class="g-grid--row">
+        <div class="g-grid--span12">
+
+            {{> footer}}
+
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+
+    require.config({
+        paths : {
+            "tif" : "/destinations/static/{{model.appVersion}}",
+            "nls" : '/travel/{{model.country}}_{{model.language}}/static/nls'
+        }
+    });
+
+
+    {{> tif-i18n }}
+    
+    {{> tif-constants }}
+
+    {{> tif-regions }}
+
+
+    require(["tif/js/tif-img-responsive"], function (Responsive) {
+        Responsive.crawl();
+    });
+
+    require(["tif/js/tif"], function (tifApp) {
+        tifApp.init();
+    });
+</script>
+
+
+<!--[if !IE]><!-->
+<script src="/ams/tms/kl/web/tc.js"></script>
+<!-- <![endif]-->
+
+
+</body>
+</html>

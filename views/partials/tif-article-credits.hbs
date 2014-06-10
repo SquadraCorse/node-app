@@ -1,0 +1,19 @@
+{{#if model.credits}}
+
+<div class="g-grid--row tif-inspired-font">
+	<div class="g-grid--indent">
+
+		<h4 class="g-h3">{{i18n "tif.photo.credits"}}</h4>
+
+		<ul id="tif-credit" class="tif-photo-credits">
+
+			{{#each model.credits}}
+				<li>{{{this}}}</li>
+			{{/each}}
+
+		</ul>
+
+	</div>
+</div>
+
+{{/if}}

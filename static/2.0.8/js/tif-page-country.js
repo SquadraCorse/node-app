@@ -1,0 +1,1 @@
+require(["v2/g-initcomponents","tif/js/tif-img-responsive","tif/js/tif-country-language"],function(e,t,n){t.crawl({threshold:300}),n.init(),e.components([{className:"js-tif-init"}])});

@@ -1,0 +1,43 @@
+
+
+<div class="g-grid--row">
+    <div class="g-grid--span12">
+
+        {{> footer}}
+
+    </div>
+</div>
+
+
+
+
+<script>
+
+    require.config({
+        paths : {
+            "tif" : "/destinations/static/{{model.appVersion}}",
+            "nls" : '/travel/{{model.country}}_{{model.language}}/static/nls'
+        }
+    });
+
+    define("tif/constants", function () {
+        "use strict";
+
+        return {
+
+            "isMobile": navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|mobile/i),
+            "storageSupport": (window.Modernizr && window.Modernizr.localstorage) ? window.Modernizr.localstorage : false
+        }
+    });
+
+</script>
+<script src="/destinations/static/{{model.appVersion}}/js/tif-page-country.js"></script>
+
+
+<!--[if !IE]><!-->
+<script src="/ams/tms/kl/web/tc.js"></script>
+<!-- <![endif]-->
+
+
+</body>
+</html>

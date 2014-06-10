@@ -1,0 +1,11 @@
+<h2 class="g-h2 tif-article-subtitle">{{title}}</h2>
+
+<div class="tif-article-column-3">
+	{{{body}}}
+</div>
+
+{{#compare hasSight true operator='=='}}
+
+	<p><a href="#" class="js-tif-article-expand" data-more="{{i18n 'tif.destination.readmore.expand'}}" data-less="{{i18n 'tif.destination.readmore.collapse'}}"><span class="tif-expand-icon">+</span> {{i18n 'tif.destination.readmore.expand'}}</a></p>
+
+{{/compare}}

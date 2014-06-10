@@ -1,0 +1,67 @@
+<div class="tif-content">
+
+	{{> tif-partial-filters}}
+
+    <div class="tif-search">
+       <div class="tif-search-header">
+            <div class="g-grid--row">
+                <div class="g-grid--indent">
+                    <div class="g-grid--span12">
+                        <div class="tif-search-filtercrumbs-container">
+                            <div class="tif-search-filtercrumbs"></div>
+                            <div class="tif-search-no-result-message g-hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-grid--row">
+                <div class="g-grid--indent">
+                   <div class="g-grid--span12">
+                        <div class="tif-search-intro">
+                            <h2 class="g-font-klm tif-h1 tif-search-result-counter">&nbsp;</h2>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="g-grid--row">
+                <div class="g-grid--indent g-clear">
+                   <div class="g-grid--span6">
+                        <div class="tif-search-change-origin tif-change-origin">
+                            <label class="tif-change-origin-label">{{i18n "tif.search.departfrom"}}:</label> <span class="tif-change-origin-text"></span>
+                            <input class="tif-change-origin-picker g-locationpicker g-locationpicker--origin" autocomplete="off"/>
+                        </div>
+                   </div>
+                   <div class="g-grid--span6">
+                        <div class="tif-search-change-view"></div><div class="tif-search-change-sorting"></div>
+                   </div>
+               </div>
+            </div>
+        </div>
+
+
+        <div class="g-grid--row">
+            <div class="g-grid--indent">
+                <div class="g-grid--span12">
+                    <div id="tif-map" class="g-hidden"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tif-search-results">
+            <div class="g-grid--row">
+                <div class="g-grid--indent">
+                   <div class="g-grid--span12">
+                        <div class="tif-search-results-container g-loading-large"></div>
+                        <div class="tif-search-results-more-destinations">
+                            <a href="#" class="g-btn g-btn-disabled g-btn-toneddown"><span><b>{{i18n "tif.search.moredestinations"}}</b></span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

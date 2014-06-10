@@ -1,0 +1,40 @@
+<div class="tif-figure tif-image-default">
+
+{{#compare visual.type 'article-container-image-full-width' operator='=='}}
+
+    <span data-srcset="{{find visual.hrefs "medium" operator="==" key="type" value="url"}} 480w, {{find visual.hrefs "large" operator="==" key="type" value="url"}}" class="js-g-img g-img-lazy g-img-ratio-4-2" data-img-type="lazy" title="{{visual.alt}}"></span>
+
+{{/compare}}
+
+
+{{#compare visual.type 'article-container-image-wide' operator='=='}}
+
+    <span data-srcset="{{find visual.hrefs "large" operator="==" key="type" value="url"}} 700w, {{find visual.hrefs "medium" operator="==" key="type" value="url"}} 1.5x, {{find visual.hrefs "large" operator="==" key="type" value="url"}} 2x" class="js-g-img g-img-lazy g-img-ratio-4-3" data-img-type="lazy" title="{{visual.alt}}"></span>
+
+{{/compare}}
+
+
+{{#compare visual.type 'article-container-image-square' operator='=='}}
+
+    <span data-srcset="{{find visual.hrefs "focusCroppedMedium" operator="==" key="type" value="url"}} 480w, {{find visual.hrefs "focusCroppedLarge" operator="==" key="type" value="url"}} 700w, {{find visual.hrefs "medium" operator="==" key="type" value="url"}} 768w 1.5x, {{find visual.hrefs "focusCroppedMedium" operator="==" key="type" value="url"}} 480w 2x, {{find visual.hrefs "focusCroppedLarge" operator="==" key="type" value="url"}} 700w 2x, {{find visual.hrefs "large" operator="==" key="type" value="url"}} 768w 2x" class="js-g-img g-img-lazy tif-img-cropped g-img-ratio-1-1" data-img-type="lazy" title="{{visual.alt}}"></span>
+
+{{/compare}}
+
+
+{{#if visual.caption}}
+    <div class="tif-figure-figcaption">
+        <div class="tif-figure-figcaption-text">
+
+            {{#if visual.credit}}
+                <a href="#tif-credit"><span class="tif-icon">&#xe61e;</span></a>
+            {{else}}
+                <span class="tif-icon">&#xe61e;</span>
+            {{/if}}
+
+            {{visual.caption}}
+        </div>
+    </div>
+{{/if}}
+
+
+</div>

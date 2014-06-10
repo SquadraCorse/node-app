@@ -1,0 +1,107 @@
+{{> tif-country-visual}}
+
+<div class="tif-content">
+
+	<div class="g-grid--row">
+	    <div class="g-grid--indent tif-article-intro">
+			<h2 class="g-font-klm tif-h1">{{model.destination.overview.title}}</h2>
+			<p>{{{model.destination.overview.body}}}</p>
+
+		</div>
+	</div>
+
+	<div class="g-grid--row js-tif-init g-expandable-mini" data-path="v2/g-expandable" data-collapsed="true">
+	    <div class="g-grid--indent">
+
+		    <div class="g-expandable-content">
+		        <div class="g-expandable-content-container">
+
+		            {{#each model.destination.additionalParagraphs}}
+
+		                <h3 class="tif-destination-intro-subtitle g-h4">{{title}}</h3>
+
+		                <p>{{{body}}}</p>
+
+		            {{/each}}
+
+		        </div>
+		    </div>
+		    <div class="g-expandable-bar">
+		        <p class="g-expandable-bar-title g-expandable-hide-when-expanded">
+		            <span class="tif-collapsible-button tif-collapsible-readmore"><span>+</span>{{i18n "tif.destination.readmore.expand"}}</span>
+		        </p>
+		        <p class="g-expandable-bar-title g-expandable-hide-when-collapsed">
+		            <span class="tif-collapsible-button tif-collapsible-readless"><span>&ndash;</span>{{i18n "tif.destination.readmore.collapse"}}</span>
+		        </p>
+		    </div>
+
+		</div>
+	</div>
+
+	<div class="g-grid--row tif-hide-on-mobile">
+	    <div class="g-grid--indent">
+	        <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+	    </div>
+	</div>
+
+	<div class="g-grid--row">
+	    <div class="g-grid--indent tif--offers">
+
+                {{#each model.offerlist}}
+
+	        		<div class="g-grid--span6">
+
+                    {{#each collection}}
+
+	                    <div class="tif-offer">
+	                    	<h3 class="g-h2">{{content.title}}</h3>
+
+	                    	<ul class="tif-offerlist">
+							{{#each content.line}}
+								<li class="tif-offerlist--item g-line-dotted">
+									<a href="{{content.componentlink.linkurl}}{{content.link_parameters}}">
+									<strong>{{content.destination}}</strong> 
+									{{#if content.price}}  {{/if}}
+
+									{{#if content.original_price}}
+										{{content.currency}}  <i>{{content.original_price}}</i> <b class="tif-price-promo">{{content.price}}</b>
+									{{else}}
+										{{content.currency}} {{content.price}}
+									{{/if}}
+
+									<b aria-hidden="true" class="g-klmicon">&gt;</b></a>
+								</li>
+							{{/each}}
+							</ul>
+
+							{{#if content.condition_text}}
+								<p class="tif-offerlist-conditions">{{content.condition_text}}</p>
+							{{/if}}
+						</div>
+                    {{/each}}
+
+                    <p>
+	                    {{#if link1}}<a href="{{link1.linkurl}}">{{link1.linktext}} <b aria-hidden="true" class="g-klmicon">&gt;</b></a><br />{{/if}}
+	                    {{#if link2}}<a href="{{link2.linkurl}}">{{link2.linktext}} <b aria-hidden="true" class="g-klmicon">&gt;</b></a>{{/if}}
+                    </p>
+
+                    </div>
+	        		<div class="g-grid--span6">
+						<img src="{{image.url}}" alt="{{image.metadata.title}}" />
+					</div>
+                {{/each}}
+
+
+
+	        </div>
+	    </div>
+	</div>
+
+
+
+
+
+
+
+
+</div>

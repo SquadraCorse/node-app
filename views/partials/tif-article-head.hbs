@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
+<!--[if IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
+<!--[if IE 8]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9" > <![endif]-->
+<!--[if gt IE 8]><!--><html lang="{{model.language}}-{{model.country}}" class="no-js"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>KLM {{i18n 'tif.search.travelguide'}} - {{model.header.title}}</title>
+    <meta name="description" content="{{model.header.intro}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta property="og:site_name" content="KLM.com" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="{{model.language}}" />
+    <meta property="og:title" content="{{model.header.title}}" />
+    <meta property="og:description" content="{{model.header.intro}}" />
+    <meta property="og:image" content="http://www.klm.com{{model.header.mappedVisuals.large.hrefs.urlSmall}}" />
+
+    <link rel="stylesheet" href="/destinations/static/core-AF.css"/>
+    <link rel="stylesheet" href="/destinations/static/{{model.appVersion}}/css/tif-AF.css"/>
+    <link rel="stylesheet" href="/destinations/static/{{model.appVersion}}/css/tif-page-article.css"/>
+
+    <link rel="canonical" href="http://www.klm.com{{find model.articleLinks 'article' operator="==" key="rel" value="href"}}" />
+
+    <script src="/ams/frontend/js/g-core-bundle.js"></script>
+    <script src="/travel/{{model.country}}_{{model.language}}/static/js/local.js"></script>
+
+    <!-- tif.cms.tcm: {{model.metadata.compId}}|{{model.metadata.lastPublished}}|{{model.metadata.lastChanged}} -->
+
+</head>
+
+<body>
+
+<span class="js-g-mi" data-g-mi="tif.page.article"></span>

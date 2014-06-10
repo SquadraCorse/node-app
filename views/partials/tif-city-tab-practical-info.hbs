@@ -1,0 +1,191 @@
+<div class="g-grid--row">
+    <div class="g-grid--indent">
+        <div class="g-grid--span8">
+            <div class="tif-destination-backlink"></div>
+
+            <h1 class="g-font-klm tif-h1">{{i18n "tif.destination.tab.practical-info.page-title" model.cityDetails.name}}</h1>
+
+        {{#if model.practicalInfo.time}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.time"}}</h3>
+            <p>{{{model.practicalInfo.time}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.country.electricity}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.electricity"}}</h3>
+            <p>{{{model.practicalInfo.country.electricity}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.country.money}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.currency"}}</h3>
+            <p>{{{model.practicalInfo.country.money}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.country.communication}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.communication"}}</h3>
+            <p>
+                {{{model.practicalInfo.country.communication}}}
+            </p>
+        {{/if}}
+
+        {{#if model.practicalInfo.country.emergencyNumbers}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.emergency-numbers"}}</h3>
+            <p>
+                {{{model.practicalInfo.country.emergencyNumbers}}}
+            </p>
+        {{/if}}
+
+            <h3 class="g-h2 tif-practical-info-visa-health" id="tif-practical-info-visa-health">{{i18n "tif.destination.tab.practical-info.visa-and-healthinformation"}}</h3>
+            <p>
+                <a href="//www.klm.com/travel/{{model.country}}_{{model.language}}/prepare_for_travel/travel_planning/travel_clinic/visaform.htm" class="tif-external" target="_blank">{{i18n "tif.destination.tab.practical-info.visa-and-healthinformation-everything-about"}}</a>
+            </p>
+        </div>
+        <div class="g-grid--span4"></div>
+    </div>
+</div>
+
+
+{{#if model.practicalInfo.country.holidays}}
+<div class="g-grid--row">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+
+            <div class="g-expandable tif-expandable js-tif-init" data-path="v2/g-expandable">
+                <div class="g-expandable-bar">
+                    <h3 class="g-expandable-bar-title g-h2">{{i18n "tif.destination.tab.practical-info.public-holidays"}}</h3>
+                    <span class="g-expandable-icon">+</span>
+                </div>
+                <div class="g-expandable-content">
+                    <div class="g-expandable-content-container">
+
+                        <table class="tif-practical-info-public-holidays-table">
+                            <thead>
+                                <tr>
+                                    <td></td>
+                                    <td>{{model.practicalInfo.country.mappedHolidays.firstColumn}}</td>
+                                    <td>{{model.practicalInfo.country.mappedHolidays.secondColumn}}</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{#each model.practicalInfo.country.mappedHolidays.days}}
+
+                                    <tr>
+                                        <td>{{title}}</td>
+                                        <td>{{firstColumn}}</td>
+                                        <td>{{secondColumn}}</td>
+                                    </tr>
+
+                                {{/each}}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+
+{{#if model.practicalInfo.climate}}
+<div class="g-grid--row">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+
+            <div class="g-expandable tif-expandable js-tif-init" data-path="v2/g-expandable">
+                <div class="g-expandable-bar">
+                    <h3 class="g-expandable-bar-title g-h2">{{i18n "tif.destination.tab.practical-info.climate"}}</h3>
+                    <span class="g-expandable-icon">+</span>
+                </div>
+                <div class="g-expandable-content">
+                    <div class="g-expandable-content-container">
+                        <p>{{{model.practicalInfo.climate}}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+{{#if model.practicalInfo.gettingAroundTheCity}}
+<div class="g-grid--row tif-practical-info-getting-around" id="tif-practical-info-getting-around">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+
+            <h2 class="g-font-klm tif-h2 tif-heading-dark">{{i18n "tif.destination.tab.practical-info.getting-around-the-city"}}</h2>
+            <div class="tif-practical-info-multicolumn">
+                <p>{{{model.practicalInfo.gettingAroundTheCity}}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+{{/if}}
+
+
+<div class="g-grid--row tif-practical-info-airport" id="tif-practical-info-airport">
+    <div class="g-grid--indent">
+        <div class="g-grid--span8">
+
+            <h2 class="g-font-klm tif-h2 tif-heading-dark">{{{model.practicalInfo.fullName}}}</h2>
+
+        {{#if model.practicalInfo.website}}
+            <p><a href="http://{{model.practicalInfo.website}}" class="tif-external" target="_blank" rel="external">{{model.practicalInfo.website}}</a></p>
+        {{/if}}
+
+        {{#if model.practicalInfo.gettingToTheCity}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.getting-to-the-city"}}</h3>
+            <p>{{{model.practicalInfo.gettingToTheCity}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.carRental}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.car-rental"}}</h3>
+            <p>{{{model.practicalInfo.carRental}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.airportTaxis}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.airport-taxis"}}</h3>
+            <p>{{{model.practicalInfo.airportTaxis}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.transferBetweenTerminals}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.transfer-between-terminals"}}</h3>
+            <p>{{{model.practicalInfo.transferBetweenTerminals}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.facilities}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.facilities"}}</h3>
+            <p>{{{model.practicalInfo.facilities}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.parking}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.parking"}}</h3>
+            <p>{{{model.practicalInfo.parking}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.internet}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.internet"}}</h3>
+            <p>{{{model.practicalInfo.internet}}}</p>
+        {{/if}}
+
+        {{#if model.practicalInfo.nearbyAirports}}
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.other-airports"}}</h3>
+            <ul class="tif-practical-info-nearby-airports">
+
+            {{#each model.practicalInfo.nearbyAirports}}
+               <li><a href="{{website}}" class="tif-external" target="_blank" rel="external">{{fullName}}</a></li>
+            {{/each}}
+
+            </ul>
+        {{/if}}
+
+        </div>
+        <div class="g-grid--span4"></div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+{{#if model.metadata.translatedThemes}}
+    <div class="g-grid--row tif-article-themes tif-inspired-font">
+    <div class="g-grid--indent"><div class="g-grid--span12">
+
+        <ul>
+        {{#each model.metadata.translatedThemes}}
+
+            <li class="tif-article-themes-item"><span class="tif-icon">{{{icon}}}</span> <a href="/destinations/{{model.country}}/{{model.language}}/search#theme={{themeCode}}">{{translatedTitle}}</a></li>
+
+        {{/each}}
+        </ul>
+
+    </div></div>
+    </div>
+{{/if}}
+
+
+<div class="g-grid--row tif-article-intro tif-inspired-font">
+    <div class="g-grid--indent">
+        <div class="g-grid--span6">
+
+            <h1 class="g-font-klm tif-article-title">{{model.header.title}}</h1>
+            <p><strong>{{model.header.intro}}</strong></p>
+            <p>{{model.header.body}}</p>
+
+        </div><div class="g-grid--span6">
+
+            <div class="g-img-reset-me-container g-img-ratio-1-1">
+
+                <img src="{{model.header.mappedVisuals.large.hrefs.urlSmall}}" class="js-g-img g-img-native" data-img-type="native" srcset="{{model.header.mappedVisuals.large.hrefs.urlSmall}} 480w, {{model.header.mappedVisuals.large.hrefs.urlMedium}} 700w, {{model.header.mappedVisuals.large.hrefs.urlSmall}} 1.5x, {{model.header.mappedVisuals.large.hrefs.urlSmall}} 480w 2x, {{model.header.mappedVisuals.large.hrefs.urlMedium}} 2x" title="{{model.header.mappedVisuals.large.alt}}"/>
+
+                {{#if model.header.mappedVisuals.large.caption}}
+                <div class="tif-figure-figcaption">
+                    <div class="tif-figure-figcaption-text">
+                        <span class="tif-icon">&#xe61e;</span> {{model.header.mappedVisuals.large.caption}}
+                    </div>
+                </div>
+                {{/if}}
+
+            </div>
+
+
+            {{! READ MORE ABOUT }}
+            {{#if model.city}}
+
+            <div class="g-clear tif-article-all-about-wrapper">
+
+                <div class="tif-article-all-about-image">
+
+                    <div class="tif-figure">
+                                
+                        <span data-srcset="{{model.header.mappedVisuals.small.hrefs.urlMedium}} 480w, {{model.header.mappedVisuals.small.hrefs.urlLarge}} 1.5x, {{model.header.mappedVisuals.small.hrefs.urlMedium}} 480w 2x, {{model.header.mappedVisuals.small.hrefs.urlLarge}} 2x" class="js-g-img g-img-lazy g-img-ratio-1-1" data-img-type="lazy" title="{{model.header.mappedVisuals.small.alt}}"></span>
+                                
+                    </div>
+
+                </div>
+
+                <div class="tif-article-all-about">
+
+                        <h3 class="g-h2">{{model.city.location.parent.name}}</h3>
+                        <h4 class="g-h2">{{model.city.location.name}}</h4>
+
+                        <ul>
+                        {{#each model.city.links}}
+                                <li><span class="g-klmicon">&#x3e;</span><a href="{{url}}" class="tif-article-links tif-article-links-{{rel}}" rel="{{rel}}">{{title}}</a></li>
+                        {{/each}}
+                        </ul>
+
+                </div>
+
+            </div>
+            {{/if}}
+
+        </div>
+    </div>
+</div>

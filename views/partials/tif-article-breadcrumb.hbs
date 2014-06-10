@@ -1,0 +1,26 @@
+    <div class="tif-article-breadcrumb tif-inspired-font">
+        <div class="g-grid--row">
+            <div class="g-grid--indent">
+                <div class="g-grid--span12">
+                    <ul>
+
+                        {{#if model.city.location.name}}
+                            <li><a href="/destinations/{{model.country}}/{{model.language}}/search" class="tif-article-breadcrumb-item">{{i18n 'tif.search.travelguide'}} <span class="g-klmicon tif-icon-gt-small">&gt;</span></a></li>
+
+                            <li><a href="/destinations/{{model.country}}/{{model.language}}/search#continent={{model.city.location.parent.parent.code}}" class="tif-article-breadcrumb-item">{{model.city.location.parent.parent.name}} <span class="g-klmicon tif-icon-gt-small">&gt;</span></a></li>
+
+                            <li><a href="/destinations/{{model.country}}/{{model.language}}/search#country={{model.city.location.parent.code}}" class="tif-article-breadcrumb-item">{{model.city.location.parent.name}} <span class="g-klmicon tif-icon-gt-small">&gt;</span></a></li>
+
+                            <li>{{model.city.location.name}}</li>
+
+                        {{else}}
+
+                            <li><a href="/destinations/{{model.country}}/{{model.language}}/search" class="tif-article-breadcrumb-item">{{i18n 'tif.search.travelguide'}}</a></li>
+
+                        {{/if}}
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

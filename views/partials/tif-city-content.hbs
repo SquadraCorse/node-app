@@ -1,0 +1,17 @@
+<div class="tif-content">
+    <div class="tif-tabs tif-tabs-destination-page">
+
+        {{> tif-city-menu}}
+
+        <div class="tif-tabs-content-wrapper">
+
+            {{#each model.contentConfiguration.tabs}}
+
+                {{! JAVASCRIPT CHECKS IF CONTAINER IS EMPTY SO NO SPACES IN THIS PART FOR THAT REASON, TODO: REWRITE THAT JS PART }}
+                <div id="{{id}}" class="tif-tab-content {{#if active}}tif-tab-content-active{{/if}}">{{#if active}}{{dynamic template ../../this}}{{/if}}</div>
+
+            {{/each}}
+
+        </div>
+    </div>
+</div>

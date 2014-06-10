@@ -1,0 +1,178 @@
+<div class="g-grid--row">
+    <div class="g-grid--indent g-clear">
+
+        <p class="tif-destination-backlink"></p>
+
+        <div class="tif-grid--aside">
+            <div class="tif-destination-flightinfo">
+                <h1 class="tif-destination-flightsinfo-header tif-h1">{{i18n "tif.destination.tab.overview.page-title" model.cityDetails.name}}</h1>
+                <div class="tif-destination-change-origin tif-change-origin">
+                    <label class="tif-change-origin-label">{{i18n "tif.destination.departfrom"}}</label> <span class="tif-change-origin-text"></span>
+                    <input class="tif-change-origin-picker g-locationpicker g-locationpicker--origin" autocomplete="off"/>
+                </div>
+
+                <div id="tif-timetable" data-destination="{{model.cityDetails.code}}" data-origin="{{model.origin}}" class="js-tif-init" data-path="tif/js/tif-timetable"></div>
+
+                <div class="tif-destination-flightinfo-footer">
+                    <span class="g-klmicon tif-icon-gt-small">&gt;</span>
+                    <a href="{{find model.contentConfiguration.tabs 'flights' operator="==" key="id" value="url"}}" data-event-value="flights" data-tab-id="flights" data-xhr-url="{{find model.contentConfiguration.tabs 'flights' operator="==" key="id" value="templateUrl"}}" class="tif-tab-text">{{i18n 'tif.destination.tab.overview.all-flights'}}</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="tif-grid--article">
+
+            <div class="tif-destination-intro g-expandable-mini js-tif-init" data-path="v2/g-expandable" data-collapsed="true">
+
+                <h2 class="g-font-klm tif-h1">{{model.content.overview.title}}</h2>
+
+                <p>{{model.content.overview.body}}</p>
+
+                <div class="g-expandable-content">
+                    <div class="g-expandable-content-container">
+
+                        {{#each model.content.additionalParagraphs}}
+
+                            <h2 class="tif-destination-intro-subtitle g-h4">{{title}}</h2>
+
+                            {{{body}}}
+
+                        {{/each}}
+
+                    </div>
+                </div>
+                <div class="g-expandable-bar">
+                    <p class="g-expandable-bar-title g-expandable-hide-when-expanded">
+                        <span class="tif-collapsible-button tif-collapsible-readmore"><span>+</span>{{i18n "tif.destination.readmore.expand"}}</span>
+                    </p>
+                    <p class="g-expandable-bar-title g-expandable-hide-when-collapsed">
+                        <span class="tif-collapsible-button tif-collapsible-readless"><span>&ndash;</span>{{i18n "tif.destination.readmore.collapse"}}</span>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+{{#if model.highlights}}
+
+<div class="g-grid--row tif-hide-on-mobile">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+    </div>
+</div>
+
+<div class="g-grid--row tif-highlights-header">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+            <h4 class="g-font-klm tif-heading-dark tif-h2">{{i18n "tif.destination.tab.overview.highlights-of" model.cityDetails.name}}</h4>
+        </div>
+    </div>
+</div>
+
+<div class="g-grid--row tif-highlights">
+    <div class="g-grid--indent">
+        
+    {{#each model.highlights}}
+
+        <div class="g-grid--span4">
+
+            <div class="tif-figure tif-image-default">
+                <a href="{{link}}"><span data-srcset="{{find visual.hrefs 'small' operator="==" key="type" value="url"}} 480w, {{find visual.hrefs 'medium' operator="==" key="type" value="url"}} 700w" class="js-g-img g-img-lazy g-img-ratio-1-1" data-img-type="lazy" title="{{visual.alt}}"></span></a>
+            </div>
+            <p class="tif-highlights-caption"><a href="{{link}}">{{title}}</a> <span aria-hidden="true" class="g-klmicon tif-icon-gt-small tif-color-blue-1">&gt;</span></p>
+        </div>
+
+    {{/each}}
+
+    </div>
+</div>
+
+{{/if}}
+
+
+{{#if model.practicalInfo}}
+
+<div class="g-grid--row tif-hide-on-mobile">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+    </div>
+</div>
+
+<div class="g-grid--row tif-practical-info-teaser-header">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+            <h4 class="g-font-klm tif-heading-dark tif-h2">{{i18n "tif.destination.tab.overview.practical-info-about" model.cityDetails.name}}</h4>
+        </div>
+    </div>
+</div>
+<div class="g-grid--row tif-practical-info-teaser">
+    <div class="g-grid--indent">
+        <div class="g-grid--span8">
+            <h3 class="g-h2">{{{model.practicalInfo.fullName}}}</h3>
+            <p>
+                <a href="{{find model.contentConfiguration.tabs 'practical-info' operator="==" key="id" value="url"}}#tif-practical-info-airport" data-anchor="tif-practical-info-airport">{{i18n "tif.destination.tab.overview.read-about-airport"}}</a>
+                <span aria-hidden="true" class="g-klmicon tif-icon-gt-small tif-color-blue-1">&gt;</span>
+            </p>
+            <h3 class="g-h2">{{i18n "tif.destination.tab.practical-info.getting-around-the-city"}}</h3>
+            <p>
+                <a href="{{find model.contentConfiguration.tabs 'practical-info' operator="==" key="id" value="url"}}#tif-practical-info-getting-around" data-anchor="tif-practical-info-getting-around">{{i18n "tif.destination.tab.overview.get-around-in" model.cityDetails.name}}</a>
+                <span aria-hidden="true" class="g-klmicon tif-icon-gt-small tif-color-blue-1">&gt;</span>
+            </p>
+            <div class="g-grid--row tif-hide-on-mobile">
+                <div class="g-grid--indent">
+                    <div class="g-line-dotted tif-practical-info-teaser-dotted-line">&nbsp;</div>
+                </div>
+            </div>
+            <div class="g-grid--row tif-practical-info-teaser-minor-info">
+                <div class="g-grid--span6">
+                    <h4 class="g-h3">{{i18n "tif.destination.tab.overview.visa-and-healthcare"}}</h4>
+                    <p>
+                        <a href="{{find model.contentConfiguration.tabs 'practical-info' operator="==" key="id" value="url"}}#tif-practical-info-visa-health" data-anchor="tif-practical-info-visa-health">{{i18n "tif.destination.tab.practical-info.visa-and-healthinformation"}}</a>
+                        <span aria-hidden="true" class="g-klmicon tif-icon-gt-small tif-color-blue-1">&gt;</span>
+                    </p>
+                    <h4 class="g-h3">{{i18n "tif.destination.tab.practical-info.currency"}}</h4>
+                    {{#if model.practicalInfo.country.money}}
+                        <p>{{{model.practicalInfo.country.money}}}</p>
+                    {{/if}}
+                </div>
+                <div class="g-grid--span6">
+                    <h4 class="g-h3">{{i18n "tif.destination.tab.practical-info.time"}}</h4>
+
+                    {{#if model.practicalInfo.time}}
+                        <p>{{{model.practicalInfo.time}}}</p>
+                    {{/if}}
+
+                    <h4 class="g-h3">{{i18n "tif.destination.tab.practical-info.electricity"}}</h4>
+
+                    {{#if model.practicalInfo.country.electricity}}
+                        <p>{{{model.practicalInfo.country.electricity}}}</p>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+        <div class="g-grid--span4">
+            <span data-srcset="/destinations/static/{{model.appVersion}}/img/practical-info-default_300x150.jpg 1.5x, /destinations/static/{{model.appVersion}}/img/practical-info-default_600x300.jpg 2x" class="js-g-img g-img-lazy g-img-ratio-4-2" data-img-type="lazy"></span>
+
+            <a href="{{find model.contentConfiguration.tabs 'practical-info' operator="==" key="id" value="url"}}" class="g-btn g-btn-large g-btn-toneddown g-btn-forward tif-practical-info-teaser-btn">
+                <span>{{i18n "tif.destination.tab.overview.read-all-practical-info"}} <b class="g-klmicon" aria-hidden="true">&gt;</b></span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+{{/if}}
+
+<div class="g-grid--row tif-hide-on-mobile">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+    </div>
+</div>

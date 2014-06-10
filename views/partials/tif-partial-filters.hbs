@@ -1,0 +1,41 @@
+<div class="tif-search-filters tif-search-filters-{{model.page}}">
+    <div class="tif-tabs tif-tabs-search-filters">
+        <div class="tif-tabs-header">
+
+            {{#compare model.page 'search' operator='=='}}
+
+                {{> tif-partial-breadcrumb}}
+
+            {{/compare}}
+
+
+            <div class="tif-tabs-nav {{#compare model.page 'search' operator='=='}}tif-tabs-nav-transparency{{/compare}}">
+                <div class="g-grid--row">
+                    <div class="g-grid--span12">
+                        <ul class="tif-tabs-nav-list g-clear">
+                            <li class="tif-tabs-nav-no-delimiter first">
+                                <span class="g-font-klm tif-h3 tif-search-filters-label">{{i18n "tif.search.refinefurther"}}:</span>
+                            </li>
+                            <li class="tif-tabs-nav-no-delimiter {{#compare model.page 'search' operator='!='}}tif-activetab{{/compare}}">
+                                <a href="#" data-tab-id="tif-filter-regions" class="tif-tab-text"><span class="tif-icon">&#xe61d;</span> {{i18n "tif.search.filterregion"}}</a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="tif-filter-themes" class="tif-tab-text"><span class="tif-icon">&#xe605;</span> {{i18n "tif.search.filterthemes"}}</a>
+                            </li>
+                            <li>
+                                <a href="#" data-tab-id="tif-filter-budget" class="tif-tab-text"><span class="tif-icon">&#xe609;</span> {{i18n "tif.search.filterbudget"}}</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tif-tabs-content-wrapper">
+                <div id="tif-filter-regions" class="tif-tab-content {{#compare model.page 'search' operator='!='}}tif-tab-content-active{{/compare}}"></div>
+                <div id="tif-filter-themes" class="tif-tab-content"></div>
+                <div id="tif-filter-budget" class="tif-tab-content"></div>
+            </div>
+        </div>
+    </div>
+</div>
