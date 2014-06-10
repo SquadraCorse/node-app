@@ -433,17 +433,19 @@ div.tif-inspired-font {
 div.tif-footer {
 	padding-top: 0;
 }
-/* FILTERING */
+
 div.tif-practical-info-multicolumn {
 	border-color: #ddd;
 }
-div.tif-search-filters-themes-disabled {
+
+/* FILTERING */
+li.tif-search-filters-themes-disabled {
 	color: #ccc;
 }
-div.tif-search-filters-themes {
+li.tif-search-filters-themes {
 	color: #595959;
 }
-div.tif-search-filters-themes:hover {
+li.tif-search-filters-themes:hover {
 	background-color: #efefef;
 }
 
