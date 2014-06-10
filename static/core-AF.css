@@ -430,9 +430,24 @@ div.tif-inspired-font {
 	color: #595959;
 }
 
+
+/* FILTERING */
 div.tif-practical-info-multicolumn {
 	border-color: #ddd;
 }
+div.tif-search-filters-themes-disabled {
+	color: #ccc;
+}
+div.tif-search-filters-themes {
+	color: #595959;
+}
+div.tif-search-filters-themes:hover {
+	background-color: #efefef;
+}
+
+
+
+
 
 @media (max-width: 700px) {
 	div.tif-tabs .tif-tabs-nav.tif-tabs-nav-mobile-toggle-open .tif-tabs-nav-list li,
