@@ -401,7 +401,9 @@ div.tif-article-breadcrumb {
 div.tif-article-all-about-footer {
 	border-color: #ddd;
 }
-div.tif-header .tif-header-title,
+div.tif-header .tif-header-title {
+	color: inherit;
+}
 div.tif-destination-flightinfo .tif-destination-flightinfo-content .tif-destination-flightinfo-line,
 div.tif-destination-flightinfo .tif-destination-flightinfo-content .g-klmicon {
 	color: #c40000;
