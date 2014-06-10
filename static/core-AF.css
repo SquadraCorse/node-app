@@ -383,7 +383,7 @@ button.g-btn,button:hover.g-btn{*padding:0;*width:1;*overflow:visible;*backgroun
 	background-color: #fff;
 	z-index: 100;
 	position: relative;
-	padding: 20px;
+	padding: 20px 20px 40px;
 }
 
 div.tif-image-default {
@@ -415,4 +415,23 @@ div.tif-destination-flightinfo .tif-destination-flightsinfo-header {
 div.tif-tabs .tif-tabs-nav li {
 	background-image: none;
 	border-right: 1px solid #fff;
+}
+
+div.tif-search-filters.tif-search-filters-destination {
+	border-color: #ada59a;
+}
+div.tif-tabs .tif-tabs-nav {
+	background-color: #ada59a;
+}
+
+div.tif-tabs .tif-tabs-nav.tif-tabs-nav-transparency {
+	background: rgba(173, 165, 154,0.9);
+}
+div.tif-tabs .tif-tabs-nav .tif-tab-text {
+	color: #000;
+}
+
+.tif-h2,
+.g-h3 {
+	color: #595959 !important;
 }
