@@ -143,33 +143,34 @@ app.get('/', function(req, res){
     res.render('index', model);
 });
 
-// SAMPLE
-app.get('/sample', function(req, res) {
-
-    var url = 'http://www.oudenniel.nl/model.json';
-    var tmpl = 'sample';
-    var query = {};
-
-    xhr(res, url, query, tmpl);
-
-});
 
 // GET AND SET LANGUAGE FROM URL
 app.all('/destinations/*', function(req, res, next) {
 
-    // SET GLOBAL...
-    // TODO: WORK OUT DEFAULT LANGUAGE FOR INDEX...
-    app.locals.ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+    // TODO": THIS ALSO GETS TRUE FOR TIMETABLE AND
+    // app.locals.ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
 
-    var rxLocal = /^\/destinations\/.*\/(en|fr)/i;
-    // console.log(req.headers['accept-language'])
-    if (rxLocal.test(req.url)){
-        var arr = rxLocal.exec(req.url);
-        var local = arr[1];
-        i18n.setLocale(local);
-    } else {
-        i18n.setLocale('en');
+    var string = req.url.split("/");
+    var languages = ['en','fr'];
+    var local = 'en';
+
+    // TODO: REFACTOR...
+    if ((string.indexOf('static') >= 0) || (string.indexOf('timetable') >= 0) || (string.indexOf('pricebox') >= 0)) {
+        next();
+        return;
     }
+
+    if (string[3]) {
+
+        var inArray = languages.indexOf(string[3]);
+
+        if (inArray >= 0) {
+            local = languages[inArray];
+        }
+
+    }
+
+    i18n.setLocale(local);
 
     // SET I18N
     app.use(i18n.init);
