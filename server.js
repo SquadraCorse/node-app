@@ -41,9 +41,9 @@ hbs.handlebars.registerHelper('dynamic', function (file, context, options) {
     var myPartial = __dirname + '/views/partials/' + file;
 
     // Can't use compiled one on windows because of path / and \\ blah
-    var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
+    // var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
     // Compiled template is already available...
-    // var template = hbs.compiled[myPartial];
+    var template = hbs.compiled[myPartial];
 
     return new hbs.handlebars.SafeString(template(context));
 
@@ -144,41 +144,23 @@ app.get('/', function(req, res){
 });
 
 
-// GET AND SET LANGUAGE FROM URL
-app.all('/destinations/*', function(req, res, next) {
+// SET LANGUAGE FOR SPECIFIC PAGE
+var setLanguage = function(myLanguage) {
 
-    // TODO": THIS ALSO GETS TRUE FOR TIMETABLE AND
-    // app.locals.ip = req.header('x-forwarded-for') || req.connection.remoteAddress;
+    var languages = ['en','fr']; // IS LANGUAGE AVAILABLE
+    var lang = 'en';
 
-    var string = req.url.split("/");
-    var languages = ['en','fr'];
-    var local = 'en';
-
-    // TODO: REFACTOR...
-    if ((string.indexOf('static') >= 0) || (string.indexOf('timetable') >= 0) || (string.indexOf('pricebox') >= 0)) {
-        next();
-        return;
+    if (languages.indexOf(myLanguage) >= 0) {
+        lang = myLanguage;
     }
 
-    if (string[3]) {
-
-        var inArray = languages.indexOf(string[3]);
-
-        if (inArray >= 0) {
-            local = languages[inArray];
-        }
-
-    }
-
-    i18n.setLocale(local);
+    i18n.setLocale(lang);
 
     // SET I18N
     app.use(i18n.init);
+};
 
-    // PROCEED
-    next();
 
-});
 
 // GLOBALS
 // app.locals.appVersion = '1.2.3';
@@ -227,6 +209,9 @@ app.get('/destinations/static/:version/*', function(req, res) {
 
 // SEARCH APP
 app.get('/destinations/:country/:language/search', function(req, res) {
+
+    setLanguage(req.param("language"));
+
     var url = 'http://www.klm.com' + req.url;
     var tmpl = 'search';
     var query = {};
@@ -243,11 +228,17 @@ app.get('/destinations/:country/:language/:continent/:land/:stad/partial/:templa
     xhr(res, url, tmpl, 'html');
 });
 app.get('/destinations/:country/:language/:continent/:land/:stad', function(req, res) {
+
+    setLanguage(req.param("language"));
+
     var url = 'http://www.klm.com' + req.url;
     var tmpl = 'city';
     xhr(res, url, tmpl);
 });
 app.get('/destinations/:country/:language/:continent/:land/:stad/*', function(req, res) {
+
+    setLanguage(req.param("language"));
+
     var url = 'http://www.klm.com' + req.url;
     var tmpl = 'city';
     xhr(res, url, tmpl);
@@ -269,6 +260,8 @@ app.get('/destinations/:country/:language/pricebox/*', function(req, res) {
 
 // ARTICLE APP
 app.get('/destinations/:country/:language/article/*', function(req, res) {
+
+    setLanguage(req.param("language"));
 
     var url = 'http://www.klm.com' + req.url;
     var tmpl = 'article';

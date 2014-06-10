@@ -15,7 +15,7 @@
 	"theme.SHO": "Shopping",
 	"theme.SKI": "Skiing",
 	"theme.WEL": "Wellness",
-	"tif.search.travelguide": "Travel Guide",
+	"tif.search.travelguide": "Travele Guide",
 	"tif.search.roundtripprice": "Return flight from",
 	"tif.search.xxdestinations": "{0} destinations",
 	"tif.search.xxdestination": "{0} destination",
