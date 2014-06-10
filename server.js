@@ -217,6 +217,12 @@ app.get('/ams/*', function(req, res) {
     res.setHeader("Location", url);
     res.end();
 });
+app.get('/destinations/static/:version/*', function(req, res) {
+    var url = "//www.klm.com" + req.url;
+    res.statusCode = 302; 
+    res.setHeader("Location", url);
+    res.end();
+});
 
 // SEARCH APP
 app.get('/destinations/:country/:language/search', function(req, res) {
