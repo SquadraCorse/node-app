@@ -119,7 +119,7 @@
 	"tif.destination.pricebox.taxandbookingfee": "excl. {0} {1} taxe et {0} {2} frais de réservation",
 	"tif.destination.pricebox.tax": "excl. {0} {1} taxe",
 	"tif.destination.pricebox.bookingfee": "excl. {0} {1} frais de réservation",
-	"tif.article.all.about": "More about {0}",
+	"tif.article.all.about": "More about %s",
 	"tif.search.filtergrayedoutinfo.regions": "tif.search.filtergrayedoutinfo.regions",
 	"tif.search.filtergrayedoutinfo.themes": "tif.search.filtergrayedoutinfo.themes",
 	"tif.destination.tab.articles.all-tips-articles": "tif.destination.tab.articles.all-tips-articles"
