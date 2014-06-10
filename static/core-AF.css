@@ -25,7 +25,7 @@ a:hover{text-decoration:underline}
 @font-face{font-family:'klmicons';src:url("/ams/frontend/2.4.7/font/klmicons.eot");src:url("/ams/frontend/2.4.7/font/klmicons.eot?#iefix") format("embedded-opentype"),url("/ams/frontend/2.4.7/font/klmicons.ttf") format("truetype"),url("/ams/frontend/2.4.7/font/klmicons.svg#klmicons") format("svg"),url("/ams/frontend/2.4.7/font/klmicons.woff") format("woff");font-weight:normal;font-style:normal}
 .g-klmicon{font-family:'klmicons', verdana, arial, sans-serif;font-weight:normal;font-style:normal;speak:none}
 
-.g-h1,.g-h2{font-family:'NoaLight';font-weight:normal;padding-bottom:8px}
+.g-h1,.g-h2{font-family: NimbusSan, Arial, Helvetica, sans-serif;font-weight:normal;padding-bottom:8px}
 .g-h1,.g-h2,.g-h3{line-height:1.3}
 .g-h1{font-size:32px;color:#c40000}
 .g-h2{font-size:22px;color:#c40000}
@@ -381,4 +381,12 @@ button.g-btn,button:hover.g-btn{*padding:0;*width:1;*overflow:visible;*backgroun
 
 div.tif-search-blockview {
 	border-color: #EDEDED;
+}
+
+div.tif-article-breadcrumb {
+	background-color: #ddd;
+	color: #000;
+}
+div.tif-article-all-about-footer {
+	border-color: #ddd;
 }
