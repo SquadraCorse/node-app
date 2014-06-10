@@ -412,6 +412,12 @@ div.tif-destination-flightinfo .tif-destination-flightsinfo-header {
 	font-size: 20px;
 	color: #595959;
 }
+div.tif-search-destination .tif-search-destination-header .tif-h3 {
+	color: #595959;
+}
+div.tif-search-destination .tif-search-destination-footer li {
+	color: #ada59a;
+}
 div.tif-tabs .tif-tabs-nav li {
 	background-image: none;
 	border-right: 1px solid #fff;
@@ -425,10 +431,10 @@ div.tif-tabs .tif-tabs-nav {
 }
 
 div.tif-tabs .tif-tabs-nav.tif-tabs-nav-transparency {
-	background: rgba(173, 165, 154,0.9);
+	background: #ada59a;
 }
 div.tif-tabs .tif-tabs-nav .tif-tab-text {
-	color: #000;
+	color: #fff;
 }
 
 .tif-h2,
