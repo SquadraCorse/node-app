@@ -122,5 +122,6 @@
 	"tif.article.all.about": "More about %s",
 	"tif.search.filtergrayedoutinfo.regions": "tif.search.filtergrayedoutinfo.regions",
 	"tif.search.filtergrayedoutinfo.themes": "tif.search.filtergrayedoutinfo.themes",
-	"tif.destination.tab.articles.all-tips-articles": "tif.destination.tab.articles.all-tips-articles"
+	"tif.destination.tab.articles.all-tips-articles": "tif.destination.tab.articles.all-tips-articles",
+	"tif.search.metadescription.default": "tif.search.metadescription.default"
 }

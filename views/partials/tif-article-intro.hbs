@@ -1,3 +1,4 @@
+
 {{#if model.metadata.translatedThemes}}
     <div class="g-grid--row tif-article-themes tif-inspired-font">
     <div class="g-grid--indent"><div class="g-grid--span12">
@@ -5,7 +6,7 @@
         <ul>
         {{#each model.metadata.translatedThemes}}
 
-            <li class="tif-article-themes-item"><span class="tif-icon">{{{icon}}}</span> <a href="/destinations/{{model.country}}/{{model.language}}/search#theme={{themeCode}}">{{translatedTitle}}</a></li>
+            <li class="tif-article-themes-item"><span class="tif-icon">{{{icon}}}</span> <a href="/destinations/{{../model.country}}/{{../model.language}}/search#theme={{themeCode}}">{{translatedTitle}}</a></li>
 
         {{/each}}
         </ul>
