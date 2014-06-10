@@ -41,9 +41,9 @@ hbs.handlebars.registerHelper('dynamic', function (file, context, options) {
     var myPartial = __dirname + '/views/partials/' + file;
 
     // Can't use compiled one on windows because of path / and \\ blah
-    // var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
+    var template = hbs.handlebars.compile(fs.readFileSync(myPartial, 'utf8'));
     // Compiled template is already available...
-    var template = hbs.compiled[myPartial];
+    // var template = hbs.compiled[myPartial];
 
     return new hbs.handlebars.SafeString(template(context));
 
