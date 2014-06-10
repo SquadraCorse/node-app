@@ -430,7 +430,9 @@ div.tif-inspired-font {
 	color: #595959;
 }
 
-
+div.tif-footer {
+	padding-top: 0;
+}
 /* FILTERING */
 div.tif-practical-info-multicolumn {
 	border-color: #ddd;
