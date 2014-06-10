@@ -338,6 +338,10 @@ div.g-expandable .g-expandable-bar .g-expandable-bar-title { color:#595959;paddi
 	position: relative;
 	padding: 20px 20px 40px;
 }
+.tif-carrier-footer {
+	background: #fff url('./bg-footer.png') repeat-x 0 0;
+	height: 80px;
+}
 
 
 /* QUICK HACKS */
