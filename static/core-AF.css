@@ -371,13 +371,24 @@ button.g-btn,button:hover.g-btn{*padding:0;*width:1;*overflow:visible;*backgroun
 .g-img-ratio-9-16{padding-bottom:177.77%}
 .js-g-img.g-loading-large{background-position:center center;background-color:#ecf4f8}
 
+
+
+.g-line-dotted {
+	background-image: none;
+	border-bottom: 1px solid #ddd;
+}
+
+
 .tif-carrier-header {
 	background-color: #fff;
 	z-index: 100;
 	position: relative;
-	min-height: 80px;
+	padding: 20px;
 }
 
+div.tif-image-default {
+	background: #ddd;
+}
 
 div.tif-search-blockview {
 	border-color: #EDEDED;
@@ -389,4 +400,17 @@ div.tif-article-breadcrumb {
 }
 div.tif-article-all-about-footer {
 	border-color: #ddd;
+}
+div.tif-header .tif-header-title,
+div.tif-destination-flightinfo .tif-destination-flightinfo-content .tif-destination-flightinfo-line,
+div.tif-destination-flightinfo .tif-destination-flightinfo-content .g-klmicon {
+	color: #c40000;
+}
+div.tif-destination-flightinfo .tif-destination-flightsinfo-header {
+	font-size: 20px;
+	color: #595959;
+}
+div.tif-tabs .tif-tabs-nav li {
+	background-image: none;
+	border-right: 1px solid #fff;
 }
