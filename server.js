@@ -6,7 +6,6 @@ var i18n = require("i18n");
 // OWN FUNCTIONS
 require('./lib/xhr');
 
-
 // USE EXPRESS HANDLEBARS
 var app = express();
 var hbs;
