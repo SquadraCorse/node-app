@@ -1,5 +1,5 @@
-# Sample app using Node and REST resources
-Introduction for showing our json setup in the cloud.
+# Sample app
+Introduction for showing our json setup in the cloud. Application uses NodeJS and REST resources. Some static content will be redirected to their source, when our cookieless domain arrives we will use that one for all our static content. This is a demonstration how we can use Node and continuous delivery.
 
 ## Setup
 - build frontend using package on development version
