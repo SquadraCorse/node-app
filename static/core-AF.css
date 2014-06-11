@@ -404,19 +404,22 @@ div.tif-tabs .tif-tabs-nav .tif-tab-text {
 	color: #595959 !important;
 }
 
-
+div.tif-expand-more .tif-expand-icon,
 span.tif-collapsible-button span.active, 
 .tif-search-header .tif-search-change-view a.active.tif-search-change-view-button, 
 span.tif-collapsible-button span:active, 
 .tif-search-header .tif-search-change-view a.tif-search-change-view-button:active {
 	background: #ada59a;
 	border-color: #ddd;
+	color: #c40000;
 }
 
+span.tif-expand-icon,
 span.tif-collapsible-button span, 
 .tif-search-header .tif-search-change-view a.tif-search-change-view-button {
 	background: #ddd;
 	border-color: #ddd;
+	color: #595959;
 }
 
 input.g-locationpicker {
@@ -460,6 +463,9 @@ div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-add {
 	background-color: #ddd;
 }
 
+div.tif-article-more-layout {
+	background-color: #efefef;
+}
 
 
 
