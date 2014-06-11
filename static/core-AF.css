@@ -440,7 +440,8 @@ div.tif-practical-info-multicolumn {
 }
 
 /* FILTERING */
-li.tif-search-filters-themes {
+li.tif-search-filters-themes,
+div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-label {
 	color: #595959;
 }
 li.tif-search-filters-themes-selected {
