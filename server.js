@@ -71,8 +71,8 @@ hbs.handlebars.registerHelper('toJson', function (model) {
 hbs.handlebars.registerHelper('find', function (data, value, options) {
     // {{find model.header.inspirationalVisual.hrefs "small" operator="==" key="type" value="url"}}
     // {{find visual.hrefs "medium" operator="==" key="type" value="url"}}
-    var operator = options.hash.operator;
-    var key = options.hash.key;
+    var operator =  options.hash && options.hash.operator;
+    var key =  options.hash && options.hash.key;
     var string;
 
     var operators = {
@@ -84,6 +84,10 @@ hbs.handlebars.registerHelper('find', function (data, value, options) {
         '<=':       function(l,r) { return l <= r; },
         '>=':       function(l,r) { return l >= r; },
         'typeof':   function(l,r) { return typeof l == r; }
+    }
+
+    if (!data || !operator || !key) {
+        return;
     }
 
     for (var i = 0, len = data.length; i < len; i++) {
