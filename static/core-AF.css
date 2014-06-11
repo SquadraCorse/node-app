@@ -359,9 +359,7 @@ div.tif-article-breadcrumb {
 	background-color: #ada59a;
 	color: #000;
 }
-div.tif-article-all-about-footer,
-div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-filter, 
-div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-add {
+div.tif-article-all-about-footer {
 	border-color: #ddd;
 }
 div.tif-header .tif-header-title {
@@ -455,6 +453,11 @@ li.tif-search-filters-themes:hover {
 	background-color: #efefef;
 }
 
+
+div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-filter, 
+div.tif-search-header .tif-search-filtercrumbs li .tif-search-filtercrumbs-add {
+	background-color: #ddd;
+}
 
 
 
