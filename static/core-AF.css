@@ -347,7 +347,7 @@ div.g-expandable .g-expandable-bar .g-expandable-bar-title { color:#595959;paddi
 
 /* QUICK HACKS */
 
-div.tif-image-default {
+a.tif-image-default {
 	background: #ddd;
 }
 
