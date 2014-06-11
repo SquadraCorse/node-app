@@ -462,4 +462,8 @@ li.tif-search-filters-themes:hover {
 		border-top-color: #efefef;
 		border-bottom-color: #fff;
 	}
+
+	/* BUG LIVE */
+	div.tif-article-all-about { width: 96%; }
+
 }
