@@ -141,7 +141,8 @@ hbs.handlebars.registerHelper('compare', function (lvalue, rvalue, options) {
 app.get('/', function(req, res){
     var model = {
         copyright: 'aap',
-        writer: 'oudenniel'
+        writer: 'oudenniel',
+        port: process.env.PORT || 3000
     }
     res.render('index', model);
 });
