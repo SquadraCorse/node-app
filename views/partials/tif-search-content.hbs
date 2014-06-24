@@ -42,10 +42,28 @@
         </div>
 
 
-        <div class="g-grid--row">
+
+
+        {{! TEMP HACK FOR GETTING LEGAL MESSAGE ABOUT BOOKING FEE IN PAGE FOR POS NL}}
+        <div id="tif-search-legal" class="g-grid--row g-hidden">
+            <div class="g-grid--indent">
+                <div class="g-notification-inline g-notification-inline-information">
+                    <p class="g-notification-message">{{i18n "tif.search.legal.disclaimer"}}</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="g-grid--row g-hidden" id="tif-map-wrapper">
             <div class="g-grid--indent">
                 <div class="g-grid--span12">
-                    <div id="tif-map" class="g-hidden"></div>
+                    <div class="tif-map-wrapper">
+                        <div id="tif-map"></div>
+                        <div class="tif-map-listview">
+                            <ul id="tif-map-listview"></ul>
+                        </div>
+                        <span class="tif-map-listview-close"><b></b></span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -54,6 +72,7 @@
             <div class="g-grid--row">
                 <div class="g-grid--indent">
                    <div class="g-grid--span12">
+                       <div class="tif-search-no-result-message g-hidden"></div>
                         <div class="tif-search-results-container g-loading-large"></div>
                         <div class="tif-search-results-more-destinations">
                             <a href="#" class="g-btn g-btn-disabled g-btn-toneddown"><span><b>{{i18n "tif.search.moredestinations"}}</b></span></a>
@@ -62,6 +81,18 @@
                 </div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
 
     </div>
 </div>
