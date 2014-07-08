@@ -171,6 +171,69 @@
 
 {{/if}}
 
+
+
+
+
+{{#if model.relatedDestinations}}
+
+<div class="g-grid--row tif-hide-on-mobile">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12 g-line-dotted">&nbsp;</div>
+    </div>
+</div>
+
+<div class="g-grid--row tif-destination-overview-header">
+    <div class="g-grid--indent">
+        <div class="g-grid--span12">
+            <h3 class="g-font-klm tif-heading-dark tif-h2">{{i18n "tif.destination.tab.overview.similar-destinations.title" model.cityDetails.name}}</h3>
+        </div>
+    </div>
+</div>
+
+
+<div class="g-grid--row">
+    <div class="g-grid--indent tif-grid--indent">
+
+        <ul class="tif-related-destinations g-clear">
+        {{#each model.relatedDestinations}}
+
+            <li class="tif-grid-column-4">
+                
+                <p class="tif-related-destinations-theme"><span class="tif-icon">{{{icon}}}</span> {{{themeTitle}}}</p>
+
+                <a href="{{url}}">
+                <div class="tif-figure tif-image-default">
+
+                    {{#if imageUrlSmall}}
+                        <span data-srcset="{{imageUrlSmall}} 480w, {{imageUrlLarge}} 700w" class="js-g-img g-img-lazy g-img-ratio-1-1" data-img-type="lazy" title="{{imageUrlTitle}}"></span>
+                    {{else}}
+                        <span data-srcset="/destinations/static/{{model.appDetails.version}}/img/destination-default-image.jpg 480w, /destinations/static/{{model.appDetails.version}}/img/destination-default-image.jpg 700w" class="js-g-img g-img-lazy g-img-ratio-1-1" data-img-type="lazy" title="{{imageUrlTitle}}"></span>
+                    {{/if}}
+
+                    <div class="tif-figure-figcaption">
+                        <div class="tif-figure-figcaption-text">
+                            <span class="tif-icon"></span> {{destination}} <span class="g-klmicon tif-icon-gt-small">&gt;</span>
+                        </div>
+                    </div>
+                </div>
+                </a>
+
+                 <p><a href="{{link}}" class="tif-related-destinations-theme">{{linkText}} <span class="g-klmicon tif-icon-gt-small">&gt;</span></a></p>
+
+            </li>
+
+        {{/each}}
+        </ul>
+
+    </div>
+</div>
+
+{{/if}}
+
+
+
+
 <div class="g-grid--row tif-hide-on-mobile">
     <div class="g-grid--indent">
         <div class="g-grid--span12 g-line-dotted">&nbsp;</div>

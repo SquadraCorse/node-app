@@ -123,5 +123,6 @@
 	"tif.search.metadescription.default": "tif.search.metadescription.default",
 	"tif.search.filtergrayedoutinfo.regions": "tif.search.filtergrayedoutinfo.regions",
 	"tif.search.filtergrayedoutinfo.themes": "tif.search.filtergrayedoutinfo.themes",
-	"tif.destination.tab.articles.all-tips-articles": "tif.destination.tab.articles.all-tips-articles"
+	"tif.destination.tab.articles.all-tips-articles": "tif.destination.tab.articles.all-tips-articles",
+	"tif.destination.tab.overview.similar-destinations.title": "More destinations like %s"
 }
