@@ -15,7 +15,7 @@
 
     require.config({
         paths : {
-            "tif" : "/destinations/static/{{model.appVersion}}",
+            "tif" : "/destinations/static/{{model.appDetails.version}}",
             "nls" : '/travel/{{model.country}}_{{model.language}}/static/nls'
         }
     });
@@ -31,7 +31,7 @@
     });
 
 </script>
-<script src="/destinations/static/{{model.appVersion}}/js/tif-page-country.js"></script>
+<script src="/destinations/static/{{model.appDetails.version}}/js/tif-page-country.js"></script>
 
 
 <!--[if !IE]><!-->

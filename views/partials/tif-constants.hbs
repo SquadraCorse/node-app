@@ -4,7 +4,7 @@ define("tif/constants", ["tif/i18n"], function (I18n) {
     return {
 
         "page": "{{model.page}}",
-        "version": "{{model.appVersion}}",
+        "version": "{{model.appDetails.version}}",
         "activeTab": "{{model.activeTab}}",
 
         "destName": "{{model.cityName}}",
@@ -13,10 +13,15 @@ define("tif/constants", ["tif/i18n"], function (I18n) {
         "tabletBreakpoint": 700,
         "mobileBreakpoint": 480,
 
-        "staticPath": "/destinations/static/{{model.appVersion}}",
+        "staticPath": "/destinations/static/{{model.appDetails.version}}",
 
         "language": "{{model.language}}",
         "country": "{{model.country}}",
+
+        "sessionId": "tif:destinations:{{model.appDetails.version}}".replace(/\./g, ''),
+
+        "origin": "{{model.origin}}",
+        "pos": "{{model.country}}".toUpperCase(),
 
         "defaultOrigin": "{{model.origin}}",
         "defaultPos": "{{model.country}}".toUpperCase(),
