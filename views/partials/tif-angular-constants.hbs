@@ -1,0 +1,17 @@
+<script>
+
+angular.module('tif.core.constants', []).constant('tifConstants',  {
+
+  "origin": "{{model.origin}}",
+  "originType": "{{model.pos.defaultStation.type}}",
+  "pos": "{{model.country}}".toUpperCase(),
+
+  "defaultOrigin": "{{model.origin}}",
+  "defaultPos": "{{model.country}}".toUpperCase(),
+
+  {{> tif-angular-constants-country}}
+
+  {{> tif-angular-constants-static}}
+
+});
+</script>

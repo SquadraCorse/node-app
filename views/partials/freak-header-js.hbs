@@ -1,0 +1,21 @@
+<script src="{{model.appDetails.freakUrl}}/require-afkl.js"></script>
+<script src="{{model.appDetails.freakUrl}}/js/g-core-v2.js"></script>
+
+<script src="/travel/{{model.country}}_{{model.language}}/static/js/local.js"></script>
+
+<script>
+
+{{#if model.appDetails.environment}}
+	require(['setRequireConfig'], function (set) {
+		set.environment('{{model.appDetails.environment}}');
+ 	});
+{{/if}}
+
+    require.config({
+        paths : {
+            'tif' : '{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}',
+            'nls' : '/travel/{{model.country}}_{{model.language}}/static/nls'
+        }
+    });
+
+</script>

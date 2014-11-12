@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 
-<!--[if lt IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8 lt-ie7" > <![endif]-->
-<!--[if IE 7]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9 lt-ie8" > <![endif]-->
-<!--[if IE 8]><html lang="{{model.language}}-{{model.country}}" class="no-js lt-ie9" > <![endif]-->
-<!--[if gt IE 8]><!--><html lang="{{model.language}}-{{model.country}}" class="no-js"> <!--<![endif]-->
+<html lang="{{model.language}}-{{model.country}}" class="no-js"> <!--<![endif]-->
 
 <head>
 
@@ -25,15 +22,15 @@
     <meta property="og:description" content="{{i18n 'tif.search.metadescription.default'}}" />
     <meta property="og:image" content="http://www.klm.com/destinations/static/{{model.appDetails.version}}/img/og-visual.png" />
 
-    <link rel="stylesheet" href="/destinations/static/core-AF.css"/>
-    <link rel="stylesheet" href="/destinations/static/{{model.appDetails.version}}/css/tif-AF.css"/>
-
     <link rel="canonical" href="//www.klm.com/destinations/{{model.country}}/{{model.language}}/search" />
+{{> freak-header-css}}
 
-    <script src="//www.klm.com/ams/frontend/js/g-core-bundle.js"></script>
-    <script src="//www.klm.com/travel/{{model.country}}_{{model.language}}/static/js/local.js"></script>
+<link rel="stylesheet" href="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/css/tif-core.css"/>
+<link rel="stylesheet" href="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/css/search.css"/>
+<link rel="stylesheet" href="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/css/tif-AF.css"/>
 
-    <!-- tif.cms.tcm: {{model.header.metadata.compId}}|{{model.header.metadata.lastPublished}}|{{model.header.metadata.lastChanged}} -->
+
+{{> freak-header-js}}
 
 </head>
 

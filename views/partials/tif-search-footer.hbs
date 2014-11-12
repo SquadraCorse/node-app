@@ -1,37 +1,143 @@
 <div class="tif-footer">
 
-	{{> tif-partial-filters-mobile }}
+    <div class="g-grid--row">
+        <div class="g-grid--span12">
 
+            {{>footer}}
 
+        </div>
+    </div>
 </div>
 
-{{> footer}}
 
+
+<script src="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/lib/vendor.js"></script>
+
+{{> tif-constants-search}}
+
+<script src="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/js/core.min.js"></script>
+<script src="{{model.appDetails.staticUrl}}/destinations/static/{{model.appDetails.version}}/js/search.min.js"></script>
 
 <script>
 
-    require.config({
-        paths : {
-            "tif" : "/destinations/static/{{model.appDetails.version}}",
-            "nls" : '//www.klm.com/travel/{{model.country}}_{{model.language}}/static/nls'
-        }
+
+define("tif/constants", function() {
+    return {
+        "country": "{{model.country}}",
+        "language": "{{model.language}}",
+        "storageSupport": (window.Modernizr && window.Modernizr.localstorage && window.JSON) ? window.Modernizr.localstorage : false
+    }
+});
+
+
+
+
+(function() {
+
+    function start () {
+
+        angular.element(document).ready( function () {
+            angular.bootstrap(document.getElementById('tif-search'), ['tif.search']);
+        });
+
+    }
+
+    function config (param) {
+
+        angular.element(document).ready( function () {
+
+            angular.module('tif.search').config(function(SearchServiceProvider, tabsServiceProvider) {
+                SearchServiceProvider.config(param);
+                if (param.tab) {
+                    tabsServiceProvider.setDefaultTabByName(param.tab);
+                }
+            });
+
+        });
+
+    }
+
+
+require(["tif/js/tif-utils", "v2/lib/lodash", "v2/g-mi"], function(Utils, _) {
+
+    if (location.hash && location.hash.substring(0, 6) === "#/tif/") {
+        // new entry url
+        start();
+
+    } else if (location.hash) {
+        // old entry url, rwrite into params
+        var params = Utils.getParamsFromHash(location.hash);
+        var paramUrl = [];
+
+        _.each(params, function(value, key) {
+            paramUrl.push(key + '=' + value);
+        });
+
+        var url = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port: '') + window.location.pathname + '?' + paramUrl.join('&');
+
+        window.location = url;
+
+    } else if (location.search) {
+        // params entering url
+        var params = location.search.replace('?', '').split('&');
+        var paramUrl = {};
+
+        _.each(params, function(param) {
+            
+            var key = param.split('=');
+
+            switch (key[0]) {
+                case 'view':
+                    paramUrl.view = key[1];
+                    break;
+                case 'country':
+                    paramUrl.countries = key[1].split(',');
+                    break;
+                case 'continent':
+                    paramUrl.continents = key[1].split(',');
+                    break;
+                case 'theme':
+                    paramUrl.themes = key[1].split(',');
+                    break;
+                case 'order':
+                    paramUrl.order = key[1];
+                    break;
+                case 'tab':
+                    paramUrl.tab = key[1];
+                    break;
+                case 'budget':
+                    paramUrl.budget = parseInt(key[1], 10);
+                    break;
+                case 'origin':
+                    paramUrl.origin = key[1].slice(0, 3);
+                    break;
+                case 'pos':
+                    paramUrl.pos = key[1].slice(0, 2);
+                    break;
+            }
+
+        });
+
+        config(paramUrl);
+
+        start();
+
+    } else {
+        start();
+    }
+
+});
+
+
+}());
+
+
+    require(["tif/js/tif-search"], function (Search) {
+        Search.init();
     });
 
 
-    {{> tif-i18n }}
 
-    {{> tif-constants }}
-
-    {{> tif-regions }}
-
-
-    require(["tif/js/tif-img-responsive"], function (Responsive) {
-        Responsive.crawl();
-    });
-
-    require(["tif/js/tif"], function (tifApp) {
-        tifApp.init();
-    });
 
 </script>
 

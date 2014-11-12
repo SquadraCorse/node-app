@@ -1,0 +1,15 @@
+"config": {
+    "version": "{{model.appDetails.version}}",
+    "page": "theme",
+    "environment": "le",
+    "apiRoot": "/destinations",
+    "staticPath": "/destinations/static/{{model.appDetails.version}}/",
+    "countryCode": "{{model.country}}",
+    "languageCode": "{{model.language}}",
+    "googleKey": "AIzaSyC5pZMY6YuTJ9Sqy4kDBZuxOb28R5VS_FE",
+
+    "allDestinationsUrl": "/destinations/?theme={{model.theme.themeCode}}&fields=themes%2CpossibleTravelTime",
+    "searchRegionTriggerUrl": "/destinations/{{model.country}}/{{model.language}}/triggers",
+    "contentEnrichmentUrl": "/destinations/content/?country={{model.country}}&language={{model.language}}&destinations=",
+    "searchUrl": "/destinations/{{model.country}}/{{model.language}}/search"
+},

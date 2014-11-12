@@ -1,0 +1,22 @@
+"config": {
+    "version": "{{model.appDetails.version}}",
+    "page": "search",
+    "environment": "le",
+    "apiRoot": "/destinations",
+    "staticPath": "/destinations/static/{{model.appDetails.version}}/",
+    "countryCode": "{{model.country}}",
+    "languageCode": "{{model.language}}",
+    "googleKey": "AIzaSyC5pZMY6YuTJ9Sqy4kDBZuxOb28R5VS_FE",
+
+    "allDestinationsUrl": "/destinations/?fields=themes%2CpossibleTravelTime",
+    "searchRegionTriggerUrl": "/destinations/{{model.country}}/{{model.language}}/triggers",
+    "contentEnrichmentUrl": "/destinations/content/?country={{model.country}}&language={{model.language}}&destinations=",
+    "searchUrl": "/destinations/{{model.country}}/{{model.language}}/search",
+
+    "background" : { 
+        "visualUrlSmall" : "{{find model.header.inspirationalVisual.hrefs 'small' operator='==' key='type' value='url'}}", 
+        "visualUrlMedium" : "{{find model.header.inspirationalVisual.hrefs 'medium' operator='==' key='type' value='url'}}", 
+        "visualUrlLarge" : "{{find model.header.inspirationalVisual.hrefs 'large' operator='==' key='type' value='url'}}" 
+    }
+
+},

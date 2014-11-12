@@ -1,98 +1,107 @@
 define("tif/constants", ["tif/i18n"], function (I18n) {
-    "use strict";
+	"use strict";
 
-    return {
+	return {
 
-        "page": "{{model.page}}",
-        "version": "{{model.appDetails.version}}",
-        "activeTab": "{{model.activeTab}}",
+		"page": "{{model.page}}",
+		"version": "{{model.appDetails.version}}",
+		"activeTab": "{{model.activeTab}}",
 
-        "destName": "{{model.cityName}}",
+		"destName": "{{model.cityName}}",
 
-        "desktopBreakpoint": 1004,
-        "tabletBreakpoint": 700,
-        "mobileBreakpoint": 480,
+		"desktopBreakpoint": 1004,
+		"tabletBreakpoint": 700,
+		"mobileBreakpoint": 480,
 
-        "staticPath": "/destinations/static/{{model.appDetails.version}}",
+		"staticPath": "/destinations/static/{{model.appDetails.version}}",
 
-        "language": "{{model.language}}",
-        "country": "{{model.country}}",
+		"language": "{{model.language}}",
+		"country": "{{model.country}}",
 
-        "sessionId": "tif:destinations:{{model.appDetails.version}}".replace(/\./g, ''),
+		"sessionId": "tif:destinations:{{model.appDetails.version}}".replace(/\./g, ''),
 
-        "origin": "{{model.origin}}",
-        "pos": "{{model.country}}".toUpperCase(),
+		"origin": "{{model.pos.defaultStation.code}}",
+		"originType": "{{model.pos.defaultStation.type}}",
+		"pos": "{{model.country}}".toUpperCase(),
 
-        "defaultOrigin": "{{model.origin}}",
-        "defaultPos": "{{model.country}}".toUpperCase(),
+		"defaultOrigin": "{{model.pos.defaultStation.code}}",
+		"defaultPos": "{{model.country}}".toUpperCase(),
 
-        "destCode": "{{model.cityDetails.code}}",
-        "destinationUrl": "{{model.mainUrl}}",
+		"destCode": "{{model.cityDetails.code}}",
+		"destinationUrl": "{{model.mainUrl}}",
 
-        "googleKey": "AIzaSyC5pZMY6YuTJ9Sqy4kDBZuxOb28R5VS_FE",
+		"googleKey": "AIzaSyC5pZMY6YuTJ9Sqy4kDBZuxOb28R5VS_FE",
 
-        "allDestinationsUrl": "/destinations/",
-        "contentEnrichmentUrl": "/destinations/content/?country={{model.country}}&language={{model.language}}&destinations=",
-        "searchUrl": "/destinations/{{model.country}}/{{model.language}}/search",
+		"allDestinationsUrl": "/destinations/",
+		"searchRegionTriggerUrl": "/destinations/{{model.country}}/{{model.language}}/triggers",
+		"contentEnrichmentUrl": "/destinations/content/?country={{model.country}}&language={{model.language}}&destinations=",
+		"searchUrl": "/destinations/{{model.country}}/{{model.language}}/search",
 
-        "isMobile": navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|mobile/i),
-        "storageSupport": (window.Modernizr && window.Modernizr.localstorage && window.JSON) ? window.Modernizr.localstorage : false,
+		"visual": {
+			"url-small": 111,
+			"url-medium": 222,
+			"url-large": 333,
+			"caption": "{{model.content.visual.caption}}"
+		},
 
-        "themeIconMap": {
-            "ARC": "&#xe60f;",
-            "ROM": "&#xe619;",
-            "ACT": "&#xe616;",
-            "WEL": "&#xe603;",
-            "CUL": "&#xe613;",
-            "SHO": "&#xe602;",
-            "SKI": "&#xe606;",
-            "BEA": "&#xe600;",
-            "LUX": "&#xe60a;",
-            "FAM": "&#xe615;",
-            "ART": "&#xe60b;",
-            "MUS": "&#xe604;",
-            "DIV": "&#xe614;",
-            "NAT": "&#xe607;",
-            "GOL": "&#xe60c;",
-            "HIS": "&#xe617;"
-        },
+		"isMobile": navigator.userAgent.match(/Android|BlackBerry|iPhone|iPad|iPod|Opera Mini|IEMobile|mobile/i),
+		"storageSupport": (window.Modernizr && window.Modernizr.localstorage && window.JSON) ? window.Modernizr.localstorage : false,
 
-        "viewModes": {
-            "block": { pageLimit: 10, icon: "&#xe612;" },
-            "list":  { pageLimit: 20, icon: "&#xe610;" },
-            "map": { pageLimit: 1, icon: "&#xe61d;" }
-        },
+		"themeIconMap": {
+			"ACT": "&#xe612;",
+			"ARC": "&#xe618;",
+			"ART": "&#xe617;",
+			"BEA": "&#xe605;",
+			"CUL": "&#xe614;",
+			"DIV": "&#xe608;",
+			"FAM": "&#xe613;",
+			"GOL": "&#xe611;",
+			"HIS": "&#xe610;",
+			"LUX": "&#xe60f;",
+			"MUS": "&#xe60d;",
+			"NAT": "&#xe60e;",
+			"ROM": "&#xe60a;",
+			"SHO": "&#xe607;",
+			"SKI": "&#xe606;",
+			"WEL": "&#xe603;"
+		},
 
-        "sortModes": [
-            {
-                "mode": "popularity",
-                "label": I18n.labels["tif_search_sort_popularity"]
-            },
-            {
-                "mode": "priceLowestFirst",
-                "label": I18n.labels["tif_search_sort_pricelowestfirst"]
-            },
-            {
-                "mode": "priceHighestFirst",
-                "label": I18n.labels["tif_search_sort_pricehighestfirst"]
-            },
-            {
-                "mode": "destinationNameAZ",
-                "label": I18n.labels["tif_search_sort_alphabeticaz"]
-            },
-            {
-                "mode": "destinationNameZA",
-                "label": I18n.labels["tif_search_sort_alphabeticza"]
-            },
-            {
-                "mode": "flightDurationLowestFirst",
-                "label": I18n.labels["tif_search_sort_flightdurationlowestfirst"]
-            },
-            {
-                "mode": "flightDurationHighestFirst",
-                "label": I18n.labels["tif_search_sort_flightdurationhighestfirst"]
-            }
-        ]
-    };
+		"viewModes": {
+			"block": { pageLimit: 10, icon: "&#xe61a;" },
+			"list":  { pageLimit: 20, icon: "&#x27;" },
+			"map": { pageLimit: 1, icon: "&#xe01c;" }
+		},
+
+		"sortModes": [
+			{
+				"mode": "popularity",
+				"label": I18n.labels["tif_search_sort_popularity"]
+			},
+			{
+				"mode": "priceLowestFirst",
+				"label": I18n.labels["tif_search_sort_pricelowestfirst"]
+			},
+			{
+				"mode": "priceHighestFirst",
+				"label": I18n.labels["tif_search_sort_pricehighestfirst"]
+			},
+			{
+				"mode": "destinationNameAZ",
+				"label": I18n.labels["tif_search_sort_alphabeticaz"]
+			},
+			{
+				"mode": "destinationNameZA",
+				"label": I18n.labels["tif_search_sort_alphabeticza"]
+			},
+			{
+				"mode": "flightDurationLowestFirst",
+				"label": I18n.labels["tif_search_sort_flightdurationlowestfirst"]
+			},
+			{
+				"mode": "flightDurationHighestFirst",
+				"label": I18n.labels["tif_search_sort_flightdurationhighestfirst"]
+			}
+		]
+	};
 
 });
