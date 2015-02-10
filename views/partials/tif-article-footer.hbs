@@ -29,7 +29,7 @@
 
     require.config({
         paths : {
-            "tif" : "/destinations/static/{{model.appDetails.version}}",
+            "tif" : "/destinations/static/{{model.appDetails.uiVersion}}",
             "nls" : '/travel/{{model.country}}_{{model.language}}/static/nls'
         }
     });
@@ -46,7 +46,7 @@
     });
 
 </script>
-<script src="/destinations/static/{{model.appDetails.version}}/js/tif-page-article.js"></script>
+<script src="/destinations/static/{{model.appDetails.uiVersion}}/js/tif-page-article.js"></script>
 
 
 <!--[if !IE]><!-->
